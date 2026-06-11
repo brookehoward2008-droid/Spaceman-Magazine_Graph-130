@@ -1,0 +1,21 @@
+@media(max-width:1024px) {
+
+    .card {
+        grid-column: span 6;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .card,
+    .feature {
+        grid-column: span 12;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+}
