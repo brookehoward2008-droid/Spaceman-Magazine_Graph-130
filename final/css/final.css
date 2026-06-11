@@ -8,6 +8,7 @@
   --muted: #a0a8b0;
   --white: #787777;
   --accent: #10d6b5;
+  --hot: #ff2e88;
   --panel: rgba(37, 45, 56, 0.92);
   --panel-light: rgba(61, 71, 86, 0.9);
   --paper: rgba(226, 218, 197, 0.92);
@@ -29,7 +30,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: var(--text);
-  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.01em;
@@ -81,17 +82,21 @@ img {
 .site-title {
   margin: 0;
   color: var(--white);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(2.8rem, 7vw, 6rem);
-  font-weight: 900;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 800;
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
+  text-wrap: balance;
 }
 
-.site-subtitle {
+.site-subtitle,
+.site-header p {
   margin: 12px 0 0;
   max-width: 760px;
-  color: var(--text);
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
 }
 
 /* Navigation uses Flexbox */
@@ -108,10 +113,11 @@ img {
   flex: 0 1 auto;
   color: var(--text);
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.12em;
   padding: 8px 16px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   background: rgba(17, 24, 32, 0.42);
@@ -203,6 +209,15 @@ figcaption {
   font-weight: 700;
 }
 
+/* Hero captions read as small Orbitron labels */
+.hero-image figcaption {
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 /* Intro column */
 .article-intro {
   grid-area: intro;
@@ -215,17 +230,19 @@ figcaption {
 .article-intro h1 {
   margin: 0 0 14px;
   color: var(--ink);
-  font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(2.1rem, 5vw, 4.6rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  text-wrap: balance;
 }
 
 .deck {
   color: var(--ink);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
+  line-height: 1.55;
 }
 
 /* Article copy blocks */
@@ -259,16 +276,18 @@ figcaption {
 .scan-card h2 {
   margin: 0 0 12px;
   color: var(--ink);
-  font-size: 0.95rem;
-  font-weight: 800;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
 }
 
 .copy-block p,
 .scan-card p,
 .project-notes p {
   color: var(--ink);
+  max-width: 70ch;
 }
 
 /* Pull quote */
@@ -276,12 +295,13 @@ figcaption {
   grid-area: quote;
   background: var(--accent);
   color: var(--bg);
-  padding: 26px;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  padding: 28px 32px;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: clamp(1.4rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-wrap: balance;
 }
 
 /* Supporting image grid */
@@ -300,13 +320,14 @@ figcaption {
   object-position: center top;
   background: var(--panel);
   filter: grayscale(20%);
-  transition: filter 0.4s ease, transform 0.3s ease;
+  transition: filter 0.4s ease, transform 0.3s ease, border-color 0.35s ease;
 }
 
 .image-strip img:hover,
 .scan-card img:hover {
   filter: none;
   transform: translateY(-4px);
+  border-color: var(--hot);
 }
 
 /* Wireframes and placement maps are landscape 1280x1024 */
@@ -343,11 +364,82 @@ figcaption {
 
 .project-notes h2 {
   color: var(--white);
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .project-notes p {
   color: var(--text);
+}
+
+/* Hover-reactive boxes: panels invert to ink and hot pink */
+.article-intro,
+.copy-block,
+.pull-quote,
+.scan-card,
+.project-notes,
+.hero-image {
+  transition: background-color 0.35s ease, color 0.35s ease,
+    border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.article-intro h1,
+.article-intro p,
+.copy-block h2,
+.copy-block p,
+.scan-card h2,
+.scan-card p,
+.scan-card figcaption,
+.project-notes h2,
+.project-notes p {
+  transition: color 0.35s ease;
+}
+
+.article-intro:hover,
+.copy-block:hover,
+.scan-card:hover {
+  background: var(--ink);
+  border-color: var(--hot);
+  box-shadow: 0 6px 24px rgba(255, 46, 136, 0.3);
+}
+
+.article-intro:hover h1,
+.copy-block:hover h2,
+.scan-card:hover h2 {
+  color: var(--hot);
+}
+
+.article-intro:hover p,
+.copy-block:hover p,
+.scan-card:hover p,
+.scan-card:hover figcaption {
+  color: var(--text);
+}
+
+.pull-quote:hover {
+  background: var(--ink);
+  color: var(--hot);
+  box-shadow: 0 6px 24px rgba(255, 46, 136, 0.3);
+}
+
+.project-notes:hover {
+  border-left-color: var(--hot);
+}
+
+.project-notes:hover h2 {
+  color: var(--hot);
+}
+
+.hero-image:hover {
+  border-color: var(--hot);
+}
+
+.main-nav a:hover {
+  background-color: var(--hot);
+  border-color: var(--hot);
+  color: var(--white);
 }
 
 /* Footer uses Flexbox */
@@ -433,7 +525,7 @@ figcaption {
   }
 
   .pull-quote {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   .site-footer {
