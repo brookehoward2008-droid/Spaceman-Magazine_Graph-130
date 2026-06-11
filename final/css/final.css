@@ -6,7 +6,7 @@
   --ink: #171717;
   --paper: #f5edd8;
   --cream: #fff9e8;
-  --red: #b54332;
+  --blue-grey: #3f6eac;
   --blue: #087d8c;
   --green: #253d2c;
   --gold: #e5b84d;
@@ -220,6 +220,7 @@ img {
 
 /* Tablet */
 @media screen and (max-width: 768px) {
+
   .article-grid,
   .source-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -237,6 +238,7 @@ img {
 
 /* Mobile */
 @media screen and (max-width: 520px) {
+
   .site-header,
   .magazine-page,
   .source-page,
