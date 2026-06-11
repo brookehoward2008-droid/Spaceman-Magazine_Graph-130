@@ -3,179 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spaceman Magazine Responsive Wireframe</title>
+  <title>Spacemen Magazine Instructor Wireframe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
   <link rel="stylesheet" href="css/mobile.css" />
 </head>
 <body>
-  <header class="wire-block site-header" data-note="TAG: header | NOTE: repeats on every artboard">
+  <header class="wire-block site-header">
     <span class="wire-label">HEADER</span>
-    <h1>Spaceman Magazine</h1>
-    <p>Responsive web wireframe using scanned and vector content.</p>
+    <h1 class="page-title">SPACEMEN</h1>
+    <p class="tag-note">TAG NOTE: header contains the page title and project introduction.</p>
   </header>
 
-  <nav class="wire-block site-nav" data-note="TAG: nav | NOTE: navigation changes from row to stacked layout on mobile">
-    <span class="wire-label">NAVIGATION</span>
-    <a href="#articles">Articles</a>
-    <a href="#images">Images</a>
-    <a href="#vectors">Vectors</a>
-    <a href="#notes">Notes</a>
+  <nav class="wire-block site-nav">
+    <span class="wire-label">NAV</span>
+    <a href="#wireframe">Wireframe</a>
+    <a href="#grid">Grid Notes</a>
+    <a href="#images">Image Notes</a>
+    <a href="#project">Magazine Link</a>
   </nav>
 
-  <main class="baseline-grid">
-    <section class="artboard-note wire-block">
-      <span class="wire-label">ARTBOARD NOTES</span>
-      <p><strong>Desktop:</strong> 1280px wide, 3-column grid.</p>
-      <p><strong>Tablet:</strong> 768px wide, grid becomes 2 columns.</p>
-      <p><strong>Mobile:</strong> grid becomes 1 column.</p>
-    </section>
+  <main id="wireframe" class="pure-g baseline-grid wire-main">
+    <aside class="pure-u-1-3 wire-block aside-panel">
+      <span class="wire-label">ASIDE</span>
+      <p class="class-note">PURE CLASS: pure-u-1-3</p>
+      <p><strong>CONTENT NOTE:</strong> Use this side column for supporting magazine text, article notes, or a short pull quote.</p>
+      <p><strong>MEASUREMENT NOTE:</strong> This column takes one-third of the parent grid on desktop.</p>
+      <p><strong>RESPONSIVE NOTE:</strong> At small widths this stacks above the article.</p>
+    </aside>
 
-    <section id="articles" class="grid-section grid-container">
-      <h2>3 Column Responsive Article Wireframe</h2>
+    <article class="pure-u-2-3 wire-block article-panel">
+      <span class="wire-label">ARTICLE</span>
+      <p class="class-note">PURE CLASS: pure-u-2-3</p>
 
-      <div class="grid-row three-column-grid">
-        <article class="wire-card grid-col">
-          <span class="wire-label">ARTICLE 01</span>
-          <img src="images/18.png" alt="Spaceship interior scene" />
-          <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Feature story card for the gravity/spaceship scene.</p>
-            <p><strong>IMG NOTE:</strong> Use as scanned hero image. Crop center for desktop.</p>
-            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
-          </div>
-          <h3>Gravity Aboard</h3>
-          <p>Sample article copy for the first magazine feature.</p>
-        </article>
+      <p class="standout">P TAG: Intro paragraph for the Spacemen magazine story.</p>
 
-        <article class="wire-card grid-col">
-          <span class="wire-label">ARTICLE 02</span>
-          <img src="images/20.png" alt="Green monster scene" />
-          <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Creature feature card.</p>
-            <p><strong>IMG NOTE:</strong> Keep monster centered in image frame.</p>
-            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
-          </div>
-          <h3>Monster Feature</h3>
-          <p>Sample article copy for a vintage sci-fi monster spread.</p>
-        </article>
+      <figure class="image-wire no-border">
+        <span class="wire-label">FIGURE / IMG TAG</span>
+        <img src="images/18.png" alt="Spacemen magazine scan showing a science fiction spaceship scene" class="astro" />
+        <figcaption>IMG NOTE: scanned magazine image, responsive width: 100%, height: auto, saved in /images/.</figcaption>
+      </figure>
 
-        <article class="wire-card grid-col">
-          <span class="wire-label">ARTICLE 03</span>
-          <img src="images/21.png" alt="Robot and woman scene" />
-          <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Robot image works well as a character highlight.</p>
-            <p><strong>IMG NOTE:</strong> Crop from top/right to keep robot visible.</p>
-            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
-          </div>
-          <h3>Robot Encounter</h3>
-          <p>Sample article copy for the robot feature image.</p>
-        </article>
+      <p>P TAG: Short caption or supporting paragraph after the image.</p>
 
-        <article class="wire-card grid-col">
-          <span class="wire-label">ARTICLE 04</span>
-          <img src="images/22.png" alt="1984 science fiction scene" />
-          <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Supporting feature for film/history content.</p>
-            <p><strong>IMG NOTE:</strong> Use object-position to protect right-side text.</p>
-            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
-          </div>
-          <h3>Future Society</h3>
-          <p>Sample article copy for the dystopian science fiction image.</p>
-        </article>
+      <h2 class="article-title">H1 / HEADLINE TAG</h2>
 
-        <article class="wire-card grid-col">
-          <span class="wire-label">ARTICLE 05</span>
-          <img src="images/24.png" alt="Flying saucer scene" />
-          <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Good wide visual for a promotional card.</p>
-            <p><strong>IMG NOTE:</strong> Crop lower third on small screens if needed.</p>
-            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
-          </div>
-          <h3>UFO Arrival</h3>
-          <p>Sample article copy for a flying saucer scene.</p>
-        </article>
-
-        <article class="wire-card grid-col">
-          <span class="wire-label">ARTICLE 06</span>
-          <img src="images/26.png" alt="Science fiction lab scene" />
-          <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Use as equipment/technology feature.</p>
-            <p><strong>IMG NOTE:</strong> Works best with full-width image crop.</p>
-            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
-          </div>
-          <h3>Alien Lab</h3>
-          <p>Sample article copy for the science lab feature.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="vectors" class="grid-section grid-container">
-      <h2>Measurement / Grid / Responsive Notes</h2>
-
-      <div class="grid-row three-column-grid notes-grid">
-        <article class="wire-card note-card grid-col">
-          <span class="wire-label">MEASUREMENTS</span>
-          <div class="measurement-box">
-            <p><strong>Container:</strong> max-width 1280px</p>
-            <p><strong>Side padding:</strong> 24px desktop</p>
-            <p><strong>Column gap:</strong> 24px</p>
-            <p><strong>Column width:</strong> about 394.67px</p>
-            <p><strong>Baseline grid:</strong> 24px vertical rhythm</p>
-          </div>
-          <div class="note-list">
-            <p><strong>NOTE:</strong> Keep article cards aligned to the same baseline spacing.</p>
-            <p><strong>TAG NOTE:</strong> section, article, div, p.</p>
-          </div>
-        </article>
-
-        <article class="wire-card note-card grid-col">
-          <span class="wire-label">GRID LAYOUT</span>
-          <div class="grid-diagram">
-            <div>COL 1</div>
-            <div>COL 2</div>
-            <div>COL 3</div>
-          </div>
-          <div class="note-list">
-            <p><strong>NOTE:</strong> Desktop and 768px tablet views use a 3-column CSS grid.</p>
-            <p><strong>CSS:</strong> grid-template-columns: repeat(3, 1fr);</p>
-            <p><strong>TAG NOTE:</strong> .grid-container, .grid-row, .grid-col.</p>
-          </div>
-        </article>
-
-        <article class="wire-card note-card grid-col">
-          <span class="wire-label">RESPONSIVE WEB</span>
-          <div class="responsive-box">
-            <p><strong>1280px:</strong> desktop artboard</p>
-            <p><strong>768px:</strong> tablet breakpoint</p>
-            <p><strong>480px:</strong> mobile stack</p>
-            <p><strong>Images:</strong> width: 100%; height: auto;</p>
-          </div>
-          <div class="note-list">
-            <p><strong>NOTE:</strong> Cards stack into one column on mobile for readability.</p>
-            <p><strong>TAG NOTE:</strong> @media, img, article, nav, footer.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="notes" class="grid-section grid-container">
-      <h2>Magazine Source Link Notes</h2>
-
-      <div class="magazine-link-card wire-card">
-        <span class="wire-label">MAGAZINE LINK</span>
-        <p><strong>Project Repository:</strong></p>
-        <p>
-          <a href="https://github.com/brookehoward2008-droid/Spaceman-Magazine_Graph-130.git">
-            Spaceman Magazine Graph 130 GitHub Repository
-          </a>
-        </p>
-        <p><strong>NOTE:</strong> Use this link as the source location for the responsive web project files and magazine assets.</p>
-        <p><strong>TAG NOTE:</strong> section, article, a, p.</p>
-      </div>
-    </section>
+      <section class="pure-g nested-section wire-block">
+        <span class="wire-label">SECTION pure-g</span>
+        <p class="pure-u-1-2 section-child">P TAG<br />PURE CLASS: pure-u-1-2<br />Left nested paragraph.</p>
+        <p class="pure-u-1-2 section-child standout-blue">P TAG<br />PURE CLASS: pure-u-1-2<br />Right nested paragraph.</p>
+      </section>
+    </article>
   </main>
 
-  <footer class="wire-block site-footer" data-note="TAG: footer | NOTE: repeats on every artboard">
-    <span class="wire-label">FOOTER</span>
-    <p>&copy; 2026 Spaceman Magazine Responsive Wireframe</p>
+  <section id="grid" class="notes-board grid-container">
+    <h2>Instructor-Style Planning Notes</h2>
+
+    <div class="grid-row">
+      <article class="note-card grid-col">
+        <span class="wire-label">MEASUREMENTS</span>
+        <p><strong>Container:</strong> max-width 1280px</p>
+        <p><strong>Grid:</strong> 3 columns</p>
+        <p><strong>Side padding:</strong> 24px desktop</p>
+        <p><strong>Gap / gutter:</strong> 24px</p>
+        <p><strong>Column width:</strong> about 394.67px</p>
+        <p><strong>Baseline:</strong> 24px vertical rhythm</p>
+      </article>
+
+      <article class="note-card grid-col">
+        <span class="wire-label">HTML STRUCTURE</span>
+        <p>header</p>
+        <p>main.pure-g</p>
+        <p>aside.pure-u-1-3</p>
+        <p>article.pure-u-2-3</p>
+        <p>section.pure-g</p>
+        <p>footer.pure-g</p>
+      </article>
+
+      <article class="note-card grid-col">
+        <span class="wire-label">RESPONSIVE WEB</span>
+        <p><strong>Desktop:</strong> 1280px artboard</p>
+        <p><strong>Tablet:</strong> 768px breakpoint</p>
+        <p><strong>Mobile:</strong> stacked layout</p>
+        <p><strong>Media query:</strong> max-width 800px</p>
+        <p><strong>Images:</strong> width:100%; height:auto;</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="images" class="notes-board grid-container">
+    <h2>Spacemen Image + Content Notes</h2>
+
+    <div class="grid-row image-note-grid">
+      <article class="note-card grid-col">
+        <span class="wire-label">SCAN 01</span>
+        <img src="images/20.png" alt="Spacemen magazine monster scan" />
+        <p><strong>IMG NOTE:</strong> Use as scanned content. Crop and optimize for web before final export.</p>
+      </article>
+
+      <article class="note-card grid-col">
+        <span class="wire-label">SCAN 02</span>
+        <img src="images/21.png" alt="Spacemen magazine robot scan" />
+        <p><strong>IMG NOTE:</strong> Keep subject centered. Add meaningful alt text.</p>
+      </article>
+
+      <article class="note-card grid-col">
+        <span class="wire-label">SCAN 03</span>
+        <img src="images/24.png" alt="Spacemen magazine flying saucer scan" />
+        <p><strong>IMG NOTE:</strong> Save final web images in the images folder.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="project" class="notes-board grid-container project-link">
+    <h2>Magazine Link + Deployment Notes</h2>
+    <div class="note-card">
+      <span class="wire-label">PROJECT NOTES</span>
+      <p><strong>Magazine:</strong> Spacemen Magazine, April 1962 project assets.</p>
+      <p><strong>Repository:</strong> <a href="https://github.com/brookehoward2008-droid/Spaceman-Magazine_Graph-130.git">Spaceman-Magazine_Graph-130</a></p>
+      <p><strong>Export:</strong> Illustrator artboards exported for screens into the images folder.</p>
+      <p><strong>Live site:</strong> Use GitHub Pages after pushing to main.</p>
+    </div>
+  </section>
+
+  <footer class="pure-g wire-block site-footer">
+    <p class="pure-u-2-3">FOOTER P TAG | PURE CLASS: pure-u-2-3 | GRAPH 130 Spacemen Magazine Project</p>
+    <p class="pure-u-1-3">P TAG | pure-u-1-3</p>
   </footer>
 </body>
 </html>
