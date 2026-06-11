@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #171717;
+  --paper: #f5edd8;
+  --cream: #fff9e8;
+  --red: #b54332;
+  --blue: #087d8c;
+  --green: #253d2c;
+  --gold: #e5b84d;
+  --soft-gray: #ded8c8;
+  --gap: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.site-header,
+.site-footer,
+.magazine-page,
+.source-page {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 28px 24px 18px;
+  background: var(--green);
+  color: white;
+  border-bottom: 8px solid var(--gold);
+}
+
+.site-title {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2.4rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-subtitle {
+  margin: 12px 0 0;
+  max-width: 760px;
+  font-size: 1rem;
+}
+
+.main-nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--red);
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  padding: 9px 13px;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background: white;
+  color: var(--red);
+}
+
+.magazine-page {
+  padding: 24px;
+  background: var(--cream);
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  align-items: start;
+}
+
+.hero-image {
+  grid-column: span 2;
+  margin: 0;
+  border: 4px solid var(--ink);
+  background: white;
+}
+
+.hero-image img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.hero-image figcaption {
+  padding: 10px 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--ink);
+  color: white;
+}
+
+.article-intro {
+  border-left: 10px solid var(--blue);
+  padding: 18px;
+  background: var(--soft-gray);
+}
+
+.article-intro h1 {
+  margin: 0 0 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.deck {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.copy-block {
+  background: white;
+  border-top: 6px solid var(--red);
+  padding: 18px;
+  min-height: 260px;
+}
+
+.copy-block h2,
+.scan-card h2 {
+  margin: 0 0 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pull-quote {
+  grid-column: span 2;
+  background: var(--blue);
+  color: white;
+  padding: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.6rem, 4vw, 3.5rem);
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.image-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  margin-top: 24px;
+}
+
+.image-strip img,
+.scan-card img {
+  border: 4px solid var(--ink);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: white;
+}
+
+.source-page {
+  padding: 24px;
+  background: var(--cream);
+}
+
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+.scan-card {
+  background: white;
+  padding: 16px;
+  border: 3px solid var(--ink);
+}
+
+.project-notes {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--green);
+  color: white;
+}
+
+.project-notes a {
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.site-footer {
+  padding: 24px;
+  background: var(--ink);
+  color: white;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .article-grid,
+  .source-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-image,
+  .pull-quote {
+    grid-column: span 2;
+  }
+
+  .image-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 520px) {
+  .site-header,
+  .magazine-page,
+  .source-page,
+  .site-footer {
+    padding: 16px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    padding: 12px 16px;
+  }
+
+  .main-nav a {
+    text-align: center;
+  }
+
+  .article-grid,
+  .source-grid,
+  .image-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image,
+  .pull-quote {
+    grid-column: span 1;
+  }
+
+  .pull-quote {
+    font-size: 1.8rem;
+  }
+}
