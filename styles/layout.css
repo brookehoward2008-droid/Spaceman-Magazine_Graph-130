@@ -1,17 +1,1 @@
-.grid{
-    max-width:1440px;
-    margin:auto;
-    padding:2rem;
-
-    display:grid;
-    grid-template-columns:repeat(12,1fr);
-    gap:24px;
-}
-
-.feature{
-    grid-column:span 12;
-}
-
-.card{
-    grid-column:span 4;
-}
+/* 12-column grid definition */

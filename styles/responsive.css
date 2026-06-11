@@ -1,13 +1,1 @@
-/* Tablet breakpoint — the 768px mobile rules live in mobile.css */
-
-@media(max-width:1024px) {
-
-    .card {
-        grid-column: span 6;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-}
+/* Tablet breakpoint styles */
