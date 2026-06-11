@@ -366,30 +366,32 @@ figcaption {
     width: 92%;
   }
 
-  .
-}
+  .magazine-page {
+    padding: 16px;
+  }
 
-.main-nav {
-  flex-direction: column;
-  align-items: stretch;
-}
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 
-.main-nav a {
-  width: 100%;
-  text-align: center;
-}
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+  }
 
-.source-grid,
-.image-strip {
-  grid-template-columns: 1fr;
-}
+  .source-grid,
+  .image-strip {
+    grid-template-columns: 1fr;
+  }
 
-.pull-quote {
-  font-size: 2rem;
-}
+  .pull-quote {
+    font-size: 2rem;
+  }
 
-.site-footer {
-  flex-direction: column;
-  align-items: flex-start;
-}
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
