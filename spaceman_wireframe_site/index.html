@@ -21,7 +21,7 @@
     <a href="#notes">Notes</a>
   </nav>
 
-  <main>
+  <main class="baseline-grid">
     <section class="artboard-note wire-block">
       <span class="wire-label">ARTBOARD NOTES</span>
       <p><strong>Desktop:</strong> 1280px wide, 3-column grid.</p>
@@ -29,11 +29,11 @@
       <p><strong>Mobile:</strong> grid becomes 1 column.</p>
     </section>
 
-    <section id="articles" class="grid-section">
+    <section id="articles" class="grid-section grid-container">
       <h2>3 Column Responsive Article Wireframe</h2>
 
-      <div class="three-column-grid">
-        <article class="wire-card">
+      <div class="grid-row three-column-grid">
+        <article class="wire-card grid-col">
           <span class="wire-label">ARTICLE 01</span>
           <img src="images/18.png" alt="Spaceship interior scene" />
           <div class="note-list">
@@ -45,7 +45,7 @@
           <p>Sample article copy for the first magazine feature.</p>
         </article>
 
-        <article class="wire-card">
+        <article class="wire-card grid-col">
           <span class="wire-label">ARTICLE 02</span>
           <img src="images/20.png" alt="Green monster scene" />
           <div class="note-list">
@@ -57,7 +57,7 @@
           <p>Sample article copy for a vintage sci-fi monster spread.</p>
         </article>
 
-        <article class="wire-card">
+        <article class="wire-card grid-col">
           <span class="wire-label">ARTICLE 03</span>
           <img src="images/21.png" alt="Robot and woman scene" />
           <div class="note-list">
@@ -69,7 +69,7 @@
           <p>Sample article copy for the robot feature image.</p>
         </article>
 
-        <article class="wire-card">
+        <article class="wire-card grid-col">
           <span class="wire-label">ARTICLE 04</span>
           <img src="images/22.png" alt="1984 science fiction scene" />
           <div class="note-list">
@@ -81,7 +81,7 @@
           <p>Sample article copy for the dystopian science fiction image.</p>
         </article>
 
-        <article class="wire-card">
+        <article class="wire-card grid-col">
           <span class="wire-label">ARTICLE 05</span>
           <img src="images/24.png" alt="Flying saucer scene" />
           <div class="note-list">
@@ -93,7 +93,7 @@
           <p>Sample article copy for a flying saucer scene.</p>
         </article>
 
-        <article class="wire-card">
+        <article class="wire-card grid-col">
           <span class="wire-label">ARTICLE 06</span>
           <img src="images/26.png" alt="Science fiction lab scene" />
           <div class="note-list">
@@ -107,39 +107,68 @@
       </div>
     </section>
 
-    <section id="vectors" class="grid-section">
-      <h2>Vector / Scanned Content Notes</h2>
+    <section id="vectors" class="grid-section grid-container">
+      <h2>Measurement / Grid / Responsive Notes</h2>
 
-      <div class="three-column-grid">
-        <article class="wire-card vector-card">
-          <span class="wire-label">VECTOR</span>
-          <img src="images/p3-vector-a.svg" alt="Vector art asset" />
+      <div class="grid-row three-column-grid notes-grid">
+        <article class="wire-card note-card grid-col">
+          <span class="wire-label">MEASUREMENTS</span>
+          <div class="measurement-box">
+            <p><strong>Container:</strong> max-width 1280px</p>
+            <p><strong>Side padding:</strong> 24px desktop</p>
+            <p><strong>Column gap:</strong> 24px</p>
+            <p><strong>Column width:</strong> about 394.67px</p>
+            <p><strong>Baseline grid:</strong> 24px vertical rhythm</p>
+          </div>
           <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Place vector content in supporting cards.</p>
-            <p><strong>IMG NOTE:</strong> SVG stays sharp at all screen widths.</p>
-            <p><strong>TAG NOTE:</strong> section, article, img.</p>
+            <p><strong>NOTE:</strong> Keep article cards aligned to the same baseline spacing.</p>
+            <p><strong>TAG NOTE:</strong> section, article, div, p.</p>
           </div>
         </article>
 
-        <article class="wire-card vector-card">
-          <span class="wire-label">SCAN</span>
-          <img src="images/p3-scan-1.svg" alt="Scanned asset" />
+        <article class="wire-card note-card grid-col">
+          <span class="wire-label">GRID LAYOUT</span>
+          <div class="grid-diagram">
+            <div>COL 1</div>
+            <div>COL 2</div>
+            <div>COL 3</div>
+          </div>
           <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Scanned assets can be used for texture.</p>
-            <p><strong>IMG NOTE:</strong> Check contrast and readability.</p>
-            <p><strong>TAG NOTE:</strong> section, article, img.</p>
+            <p><strong>NOTE:</strong> Desktop and 768px tablet views use a 3-column CSS grid.</p>
+            <p><strong>CSS:</strong> grid-template-columns: repeat(3, 1fr);</p>
+            <p><strong>TAG NOTE:</strong> .grid-container, .grid-row, .grid-col.</p>
           </div>
         </article>
 
-        <article class="wire-card vector-card">
-          <span class="wire-label">REFERENCE</span>
-          <img src="images/reference-page-1.svg" alt="Reference page" />
+        <article class="wire-card note-card grid-col">
+          <span class="wire-label">RESPONSIVE WEB</span>
+          <div class="responsive-box">
+            <p><strong>1280px:</strong> desktop artboard</p>
+            <p><strong>768px:</strong> tablet breakpoint</p>
+            <p><strong>480px:</strong> mobile stack</p>
+            <p><strong>Images:</strong> width: 100%; height: auto;</p>
+          </div>
           <div class="note-list">
-            <p><strong>ARTICLE NOTE:</strong> Use reference page for artboard planning.</p>
-            <p><strong>IMG NOTE:</strong> Keep inside frame with object-fit: contain.</p>
-            <p><strong>TAG NOTE:</strong> section, article, img.</p>
+            <p><strong>NOTE:</strong> Cards stack into one column on mobile for readability.</p>
+            <p><strong>TAG NOTE:</strong> @media, img, article, nav, footer.</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section id="notes" class="grid-section grid-container">
+      <h2>Magazine Source Link Notes</h2>
+
+      <div class="magazine-link-card wire-card">
+        <span class="wire-label">MAGAZINE LINK</span>
+        <p><strong>Project Repository:</strong></p>
+        <p>
+          <a href="https://github.com/brookehoward2008-droid/Spaceman-Magazine_Graph-130.git">
+            Spaceman Magazine Graph 130 GitHub Repository
+          </a>
+        </p>
+        <p><strong>NOTE:</strong> Use this link as the source location for the responsive web project files and magazine assets.</p>
+        <p><strong>TAG NOTE:</strong> section, article, a, p.</p>
       </div>
     </section>
   </main>
