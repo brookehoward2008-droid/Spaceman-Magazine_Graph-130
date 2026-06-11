@@ -1,68 +1,45 @@
 # Spaceman Magazine — GRAPH 130
 
-A space-age editorial magazine website built with basic HTML and CSS
+A space-age editorial magazine project built with basic HTML and CSS
 for GRAPH 130 at Everett Community College. Project by B. Howard.
 
 ## Folder structure
 
 ```
 .
-├── index.html                  Home page (site entry point)
-├── pages/                      All other HTML pages
-│   ├── articles.html           Feature article: "Into the Cosmic Unknown"
-│   ├── gallery.html            4-column still gallery with caption overlays
-│   ├── about.html              About the project
-│   ├── wireframes.html         The three project artboards
-│   └── wireframe_spaceman3.html  Early article layout study
-├── styles/                     Stylesheets
-│   ├── styles.css              Base theme + components (nav, cards, articles, gallery)
-│   ├── layout.css              12-column CSS grid
-│   ├── responsive.css          Tablet breakpoint (1024px)
-│   └── mobile.css              Mobile breakpoint (768px) — per the artboard notes
-├── scripts/                    JavaScript
-│   └── main.js
-├── images/                     Site images
-│   ├── hero/                   Home page hero image
-│   ├── gallery/                Scanned stills for the gallery page
-│   └── wireframes/             The three artboards, exported for screens
-│       ├── wireframe-home-1280x1024.png
-│       ├── wireframe-article-1280x1024.png
-│       └── wireframe-gallery-1280x1024.png
-└── assets/                     Other assets (fonts, downloads, etc.)
+├── index.html                  Landing page linking to the project sections
+├── final/                      The final magazine site
+│   ├── final1.html             Lost Planet
+│   ├── final2.html             Girl in the Moon
+│   ├── final3.html             Obituary Dept.
+│   ├── scans.html              Original Scans — all 26 source plates
+│   └── css/final.css           Final site styles (3-column grid, backgrounds)
+├── spaceman_wireframe_site/    Instructor wireframe site (self-contained)
+├── images/
+│   ├── gallery/                Full-resolution source plates and backgrounds
+│   │   └── web/                Optimized copies (JPG) that the pages load
+│   └── wireframes/             The three 1280×1024 artboards
+├── assets/artboards/           Artboard sources (HTML/CSS) — edit and re-export
+├── styles/, scripts/           Earlier site stage (styles are stubs now)
+└── .github/                    CI workflow
 ```
 
-## Wireframes
+## Images
 
-The three 1280 × 1024 artboards (Home, Article, Gallery) each place the
-header, navigation, and footer, mark the 960px content width, and note the
-768px breakpoint that `styles/mobile.css` handles. They are exported for
-screens into `images/wireframes/` and presented on the Wireframes page.
+Pages always load the optimized copies (`images/gallery/web/` and
+`spaceman_wireframe_site/images/web/`, ~5 MB total) instead of the
+full-resolution scans (~170 MB total). To add an image: drop the original
+in `images/gallery/`, then create its web copy, e.g.
 
-## Navigation
-
-Every page shares the same navigation:
-**Home · Articles · Gallery · About · Wireframes**.
-The current page's link is underlined via the `active` class in the HTML.
-
-## Adding the gallery stills
-
-Save each scanned still as `images/gallery/still-01.jpg` (then 02, 03, …)
-and replace the matching placeholder in `pages/gallery.html` with an
-image — there is a commented example at the top of the gallery grid.
-Files can be added by drag-and-drop on github.com (Add file → Upload files)
-or from a local clone.
-
-## Replacing the hero placeholder
-
-`images/hero/space-hero.svg` is a stand-in. Swap it for a real photo and
-update the `src` in `index.html` if the filename changes.
+```
+python3 -c "from PIL import Image; im=Image.open('images/gallery/27.png').convert('RGB'); w,h=im.size; im.resize((1000, round(h*1000/w))).save('images/gallery/web/27.jpg','JPEG',quality=82,optimize=True)"
+```
 
 ## Viewing the site
 
-Open `index.html` in a browser, or serve the folder locally:
+Open `index.html` in a browser, or serve the folder locally with
+`python3 -m http.server` and visit <http://localhost:8000>.
 
-```
-python3 -m http.server
-```
-
-then visit <http://localhost:8000>.
+With GitHub Pages enabled (Settings → Pages → Deploy from branch `main`,
+root), the site is served at
+`https://brookehoward2008-droid.github.io/Spaceman-Magazine_Graph-130/`.

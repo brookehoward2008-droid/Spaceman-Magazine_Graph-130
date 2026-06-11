@@ -2,7 +2,7 @@
    PAGE-SPECIFIC SPACE BACKGROUNDS
 ----------------------------------------*/
 body.final-1 {
-  background-image: url("../images/background3.jpg");
+  background-image: url("../../images/gallery/web/background-library.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -10,7 +10,7 @@ body.final-1 {
 }
 
 body.final-2 {
-  background-image: url("../images/background2.jpg");
+  background-image: url("../../images/gallery/web/background2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -18,7 +18,15 @@ body.final-2 {
 }
 
 body.final-3 {
-  background-image: url("../images/background_unsplash.jpg");
+  background-image: url("../../images/gallery/web/background-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.final-scans {
+  background-image: url("../../images/gallery/web/background2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -30,24 +38,234 @@ body.final-3 {
 ----------------------------------------*/
 body.final-1::before,
 body.final-2::before,
-body.final-3::before {
+body.final-3::before,
+body.final-scans::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background: linear-gradient(
+    rgba(4, 5, 10, 0.78),
+    rgba(4, 5, 10, 0.62) 40%,
+    rgba(4, 5, 10, 0.85)
+  );
+}
 
-
-
-  /* ---------------------------------------
+/* ---------------------------------------
    GLOBAL BODY (MUST BE TRANSPARENT)
 ----------------------------------------*/
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Georgia", serif;
-    background: transparent;
-    /* REQUIRED */
-    color: #e8e8e8;
-    line-height: 1.65;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Georgia", serif;
+  background: transparent; /* REQUIRED */
+  color: #e8e8e8;
+  line-height: 1.65;
+}
+
+/* ---------------------------------------
+   HEADER + NAV
+----------------------------------------*/
+.site-header {
+  text-align: center;
+  padding: 3rem 1.5rem 1rem;
+}
+
+.site-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  letter-spacing: 1px;
+  line-height: 1.15;
+}
+
+.site-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #c9c9c9;
+  font-style: italic;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  padding: 1.25rem 1rem 0.5rem;
+}
+
+.main-nav a {
+  color: #e8e8e8;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  padding-bottom: 4px;
+}
+
+.main-nav a.active {
+  border-bottom: 2px solid #e8e8e8;
+}
+
+/* ---------------------------------------
+   MAGAZINE PAGE + 3-COLUMN GRID
+----------------------------------------*/
+.magazine-page {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  background: rgba(8, 9, 14, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 2rem;
+}
+
+/* wide-span pieces */
+.hero-image {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  display: block;
+  max-height: 520px;
+  object-fit: cover;
+}
+
+.hero-image figcaption {
+  padding-top: 0.5rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #a9a9a9;
+}
+
+.article-intro {
+  grid-column: span 2;
+}
+
+.article-intro h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+
+.deck {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #d6d6d6;
+}
+
+.copy-block {
+  grid-column: span 1;
+}
+
+.copy-block h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  padding-bottom: 0.4rem;
+}
+
+.pull-quote {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.45rem;
+  font-style: italic;
+  padding: 1.25rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ---------------------------------------
+   IMAGE STRIP
+----------------------------------------*/
+.image-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.image-strip img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* ---------------------------------------
+   ORIGINAL SCANS GRID
+----------------------------------------*/
+.scan-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  background: rgba(8, 9, 14, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 2rem;
+}
+
+.scan-grid figure {
+  margin: 0;
+}
+
+.scan-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.scan-grid figcaption {
+  font-size: 0.8rem;
+  color: #a9a9a9;
+  padding: 0.4rem 0 0.25rem;
+}
+
+/* ---------------------------------------
+   FOOTER
+----------------------------------------*/
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  color: #9a9a9a;
+  font-size: 0.85rem;
+}
+
+/* ---------------------------------------
+   768PX BREAKPOINT (mobile.css guide)
+----------------------------------------*/
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
   }
+
+  .article-intro,
+  .copy-block {
+    grid-column: 1 / -1;
+  }
+
+  .image-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .image-strip img {
+    height: auto;
+  }
+
+  .scan-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.25rem;
+  }
+}
