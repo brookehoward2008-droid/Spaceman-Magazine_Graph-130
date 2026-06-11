@@ -1,8 +1,25 @@
 /* ---------------------------------------
+   COSMIC COLOR SYSTEM
+----------------------------------------*/
+:root {
+  --pink: #ff0fae;
+  --pink-hot: #ff007c;
+  --blue-electric: #3b00ff;
+  --teal-neon: #00eaff;
+  --teal-dark: #007f8c;
+  --cyan-aurora: #4dfff3;
+
+  --purple-deep: #a200ff;
+  --indigo-space: #0a0633;
+  --navy-space: #020414;
+
+  --white-star: #e8e8e8;
+  --gold-solar: #ffd86b;
+}
+
+/* ---------------------------------------
    PAGE-SPECIFIC SPACE BACKGROUNDS
 ----------------------------------------*/
-
-/* Final Page 1 — Deep Space Nebula */
 body.final-1 {
   background-image: url("../images/background3.jpg");
   background-size: cover;
@@ -11,7 +28,6 @@ body.final-1 {
   background-attachment: fixed;
 }
 
-/* Final Page 2 — Stars + Galaxy */
 body.final-2 {
   background-image: url("../images/background2.jpg");
   background-size: cover;
@@ -20,7 +36,6 @@ body.final-2 {
   background-attachment: fixed;
 }
 
-/* Final Page 3 — Dark Cosmic Dust */
 body.final-3 {
   background-image: url("../images/background_unsplash.jpg");
   background-size: cover;
@@ -29,12 +44,31 @@ body.final-3 {
   background-attachment: fixed;
 }
 
+/* Cosmic overlay */
+body.final-1::before,
+body.final-2::before,
+body.final-3::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: linear-gradient(to bottom right,
+      rgba(255, 0, 124, 0.45),
+      rgba(0, 127, 140, 0.35),
+      rgba(59, 0, 255, 0.45));
+}
+
+/* ---------------------------------------
+   GLOBAL
+----------------------------------------*/
 body {
   margin: 0;
   padding: 0;
   font-family: "Georgia", serif;
-  background: #f3efe6;
-  color: #1a1a1a;
+  background: transparent;
+  color: var(--white-star);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
@@ -44,7 +78,6 @@ img {
   display: block;
 }
 
-/* Better vertical rhythm */
 p {
   margin-bottom: 1rem;
 }
@@ -62,12 +95,13 @@ p {
 .site-title {
   font-size: 2.6rem;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.5px;
+  color: var(--cyan-aurora);
+  text-shadow: 0 0 12px rgba(0, 234, 255, 0.5);
 }
 
 .site-subtitle {
   font-style: italic;
-  color: #444;
+  color: var(--white-star);
   max-width: 700px;
   margin: 0.5rem auto 1.5rem;
 }
@@ -80,19 +114,19 @@ p {
   justify-content: center;
   gap: 2.5rem;
   padding: 1rem;
-  background: #111;
-  border-top: 4px solid #d4a300;
-  border-bottom: 4px solid #d4a300;
+  background: var(--navy-space);
+  border-top: 4px solid var(--pink-hot);
+  border-bottom: 4px solid var(--blue-electric);
 }
 
 .main-nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  letter-spacing: 0.5px;
 }
 
 .main-nav a.active {
+  color: var(--cyan-aurora);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -110,104 +144,88 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 2.2rem;
-  align-items: start;
 }
 
 /* HERO IMAGE */
 .hero-image {
   grid-column: 1 / -1;
-  margin-bottom: 1rem;
 }
 
 .hero-image figcaption {
   text-align: center;
   font-size: 0.9rem;
-  margin-top: 0.4rem;
-  color: #555;
+  color: var(--white-star);
 }
 
-/* INTRO SECTION */
+/* INTRO */
 .article-intro {
   grid-column: span 2;
 }
 
 .article-intro h1 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  color: var(--cyan-aurora);
 }
 
+/* DECK */
 .deck {
   font-size: 1.15rem;
   font-weight: bold;
-  margin-bottom: 1.2rem;
 }
 
-/* COPY BLOCKS */
+/* COPY BLOCK */
 .copy-block {
-  background: #56535373;
+  background: rgba(2, 4, 20, 0.65);
+  backdrop-filter: blur(4px);
   padding: 1.4rem 1.6rem;
   border-radius: 4px;
-  border-left: 6px solid #a13b95;
+  border-left: 6px solid var(--pink);
+  color: var(--white-star);
 }
 
 .copy-block h2 {
-  margin-top: 0;
-  font-size: 1.4rem;
-  letter-spacing: -0.3px;
+  color: var(--cyan-aurora);
 }
 
 /* PULL QUOTE */
 .pull-quote {
-  grid-column: span 1;
-  background: #fff7d6;
+  background: rgba(10, 6, 51, 0.55);
   padding: 1.6rem;
   font-size: 1.5rem;
   font-style: italic;
   font-weight: bold;
-  border-left: 8px solid #d4a300;
-  line-height: 1.4;
+  border-left: 8px solid var(--teal-neon);
+  color: var(--white-star);
 }
 
-/* ---------------------------------------
-   IMAGE STRIP
-----------------------------------------*/
+/* IMAGE STRIP */
 .image-strip {
   grid-column: 1 / -1;
   display: flex;
   gap: 1rem;
-  margin-top: 2.5rem;
 }
 
 .image-strip img {
   flex: 1;
   border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* ---------------------------------------
-   FOOTER
-----------------------------------------*/
+/* FOOTER */
 .site-footer {
   text-align: center;
   padding: 2rem;
-  font-size: 0.9rem;
-  color: #555;
-  background: #f0eadc;
-  border-top: 4px solid #d4a300;
+  background: rgba(0, 0, 0, 0.7);
+  border-top: 4px solid var(--pink-hot);
 }
 
-/* ---------------------------------------
-   RESPONSIVE BREAKPOINTS
-----------------------------------------*/
+/* RESPONSIVE */
 @media (max-width: 1000px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .article-intro {
-    grid-column: span 2;
-  }
-
+  .article-intro,
   .pull-quote {
     grid-column: span 2;
   }
