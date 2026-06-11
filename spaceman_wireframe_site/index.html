@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spaceman Magazine Responsive Wireframe</title>
+  <link rel="stylesheet" href="css/mobile.css" />
+</head>
+<body>
+  <header class="wire-block site-header" data-note="TAG: header | NOTE: repeats on every artboard">
+    <span class="wire-label">HEADER</span>
+    <h1>Spaceman Magazine</h1>
+    <p>Responsive web wireframe using scanned and vector content.</p>
+  </header>
+
+  <nav class="wire-block site-nav" data-note="TAG: nav | NOTE: navigation changes from row to stacked layout on mobile">
+    <span class="wire-label">NAVIGATION</span>
+    <a href="#articles">Articles</a>
+    <a href="#images">Images</a>
+    <a href="#vectors">Vectors</a>
+    <a href="#notes">Notes</a>
+  </nav>
+
+  <main>
+    <section class="artboard-note wire-block">
+      <span class="wire-label">ARTBOARD NOTES</span>
+      <p><strong>Desktop:</strong> 1280px wide, 3-column grid.</p>
+      <p><strong>Tablet:</strong> 768px wide, grid becomes 2 columns.</p>
+      <p><strong>Mobile:</strong> grid becomes 1 column.</p>
+    </section>
+
+    <section id="articles" class="grid-section">
+      <h2>3 Column Responsive Article Wireframe</h2>
+
+      <div class="three-column-grid">
+        <article class="wire-card">
+          <span class="wire-label">ARTICLE 01</span>
+          <img src="images/18.png" alt="Spaceship interior scene" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Feature story card for the gravity/spaceship scene.</p>
+            <p><strong>IMG NOTE:</strong> Use as scanned hero image. Crop center for desktop.</p>
+            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
+          </div>
+          <h3>Gravity Aboard</h3>
+          <p>Sample article copy for the first magazine feature.</p>
+        </article>
+
+        <article class="wire-card">
+          <span class="wire-label">ARTICLE 02</span>
+          <img src="images/20.png" alt="Green monster scene" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Creature feature card.</p>
+            <p><strong>IMG NOTE:</strong> Keep monster centered in image frame.</p>
+            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
+          </div>
+          <h3>Monster Feature</h3>
+          <p>Sample article copy for a vintage sci-fi monster spread.</p>
+        </article>
+
+        <article class="wire-card">
+          <span class="wire-label">ARTICLE 03</span>
+          <img src="images/21.png" alt="Robot and woman scene" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Robot image works well as a character highlight.</p>
+            <p><strong>IMG NOTE:</strong> Crop from top/right to keep robot visible.</p>
+            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
+          </div>
+          <h3>Robot Encounter</h3>
+          <p>Sample article copy for the robot feature image.</p>
+        </article>
+
+        <article class="wire-card">
+          <span class="wire-label">ARTICLE 04</span>
+          <img src="images/22.png" alt="1984 science fiction scene" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Supporting feature for film/history content.</p>
+            <p><strong>IMG NOTE:</strong> Use object-position to protect right-side text.</p>
+            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
+          </div>
+          <h3>Future Society</h3>
+          <p>Sample article copy for the dystopian science fiction image.</p>
+        </article>
+
+        <article class="wire-card">
+          <span class="wire-label">ARTICLE 05</span>
+          <img src="images/24.png" alt="Flying saucer scene" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Good wide visual for a promotional card.</p>
+            <p><strong>IMG NOTE:</strong> Crop lower third on small screens if needed.</p>
+            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
+          </div>
+          <h3>UFO Arrival</h3>
+          <p>Sample article copy for a flying saucer scene.</p>
+        </article>
+
+        <article class="wire-card">
+          <span class="wire-label">ARTICLE 06</span>
+          <img src="images/26.png" alt="Science fiction lab scene" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Use as equipment/technology feature.</p>
+            <p><strong>IMG NOTE:</strong> Works best with full-width image crop.</p>
+            <p><strong>TAG NOTE:</strong> article, img, h3, p.</p>
+          </div>
+          <h3>Alien Lab</h3>
+          <p>Sample article copy for the science lab feature.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="vectors" class="grid-section">
+      <h2>Vector / Scanned Content Notes</h2>
+
+      <div class="three-column-grid">
+        <article class="wire-card vector-card">
+          <span class="wire-label">VECTOR</span>
+          <img src="images/p3-vector-a.svg" alt="Vector art asset" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Place vector content in supporting cards.</p>
+            <p><strong>IMG NOTE:</strong> SVG stays sharp at all screen widths.</p>
+            <p><strong>TAG NOTE:</strong> section, article, img.</p>
+          </div>
+        </article>
+
+        <article class="wire-card vector-card">
+          <span class="wire-label">SCAN</span>
+          <img src="images/p3-scan-1.svg" alt="Scanned asset" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Scanned assets can be used for texture.</p>
+            <p><strong>IMG NOTE:</strong> Check contrast and readability.</p>
+            <p><strong>TAG NOTE:</strong> section, article, img.</p>
+          </div>
+        </article>
+
+        <article class="wire-card vector-card">
+          <span class="wire-label">REFERENCE</span>
+          <img src="images/reference-page-1.svg" alt="Reference page" />
+          <div class="note-list">
+            <p><strong>ARTICLE NOTE:</strong> Use reference page for artboard planning.</p>
+            <p><strong>IMG NOTE:</strong> Keep inside frame with object-fit: contain.</p>
+            <p><strong>TAG NOTE:</strong> section, article, img.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wire-block site-footer" data-note="TAG: footer | NOTE: repeats on every artboard">
+    <span class="wire-label">FOOTER</span>
+    <p>&copy; 2026 Spaceman Magazine Responsive Wireframe</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #e8e2d2;
+  color: #1b1b1b;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wire-block,
+.wire-card {
+  border: 3px dashed #333;
+  background: #fffdf4;
+  position: relative;
+}
+
+.wire-label {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.site-header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.site-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.site-header p {
+  margin: 0;
+}
+
+.site-nav {
+  max-width: 1280px;
+  margin: 12px auto;
+  padding: 18px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.site-nav .wire-label {
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.site-nav a {
+  color: #111;
+  font-weight: 800;
+  text-decoration: none;
+  border: 2px solid #111;
+  padding: 10px 14px;
+  background: #f6cf55;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 0 36px;
+}
+
+.artboard-note {
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+.artboard-note p {
+  margin: 6px 0;
+}
+
+.grid-section {
+  margin-bottom: 34px;
+}
+
+.grid-section h2 {
+  border: 3px solid #222;
+  background: #b64332;
+  color: white;
+  padding: 18px;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Required desktop 3-column grid */
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.wire-card {
+  padding: 14px;
+}
+
+.wire-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid #111;
+  background: #ddd;
+  margin-bottom: 14px;
+}
+
+.vector-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: white;
+}
+
+.note-list {
+  border: 2px solid #555;
+  background: #f1ecd9;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.note-list p {
+  margin: 0 0 8px;
+  line-height: 1.4;
+  font-size: 0.92rem;
+}
+
+.note-list p:last-child {
+  margin-bottom: 0;
+}
+
+.wire-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+}
+
+.wire-card > p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.site-footer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+/* 768px tablet artboard */
+@media screen and (max-width: 768px) {
+  .site-header,
+  .site-nav,
+  main,
+  .site-footer {
+    max-width: 768px;
+  }
+
+  body {
+    padding: 0 14px;
+  }
+
+  .three-column-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-nav {
+    align-items: flex-start;
+  }
+
+  .site-nav .wire-label {
+    width: 100%;
+  }
+}
+
+/* Mobile artboard */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .site-nav .wire-label {
+    width: fit-content;
+  }
+
+  .site-nav a {
+    text-align: center;
+  }
+
+  .three-column-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wire-card img {
+    aspect-ratio: 1 / 1;
+  }
+}
