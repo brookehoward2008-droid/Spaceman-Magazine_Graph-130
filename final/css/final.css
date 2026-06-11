@@ -41,6 +41,24 @@ img {
   height: auto;
 }
 
+/* Skip link: off-screen until a keyboard user tabs to it */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
 /* Layout wrappers */
 .site-header,
 .main-nav,
@@ -298,10 +316,22 @@ figcaption {
 
 /* Scans page */
 .scan-card {
+  margin: 0;
   background: rgba(245, 245, 245, 0.92);
   padding: 16px;
   border: 1.5px solid var(--accent);
   color: var(--ink);
+}
+
+/* Caption sits on the light card, so neutralize the dark image-caption
+   band that the global figcaption rule applies elsewhere */
+.scan-card figcaption {
+  margin-top: 14px;
+  padding: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .project-notes {
