@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Artboard 1 — Home</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { overflow: hidden; }
+  body {
+    width: 1280px; height: 1024px; position: relative;
+    background: #ffffff; color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .titlebar { position: absolute; top: 14px; left: 24px; font-size: 15px; font-weight: bold; }
+  .titlebar span { font-weight: normal; }
+  .bp-note { position: absolute; top: 17px; right: 24px; font-size: 11px; color: #444; }
+  .guide { position: absolute; left: 768px; top: 40px; bottom: 36px; border-left: 1px dashed #c4c4c4; }
+  .guide i { position: absolute; top: -2px; left: 5px; font-style: normal; font-size: 10px; color: #999; white-space: nowrap; }
+  .frame { position: absolute; border: 1px solid #1a1a1a; background: #fff; }
+  .zone { position: absolute; border: 1px solid #b5b5b5; background: #fafafa; }
+  .bar { position: absolute; background: #d9d9d9; }
+  .stub { position: absolute; background: repeating-linear-gradient(to bottom, #dcdcdc 0 8px, transparent 8px 18px); }
+  .imgbox { position: absolute; border: 1px solid #8a8a8a; background: #efefef; }
+  .imgbox svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .label { position: absolute; font-size: 11px; color: #444; }
+  .label.in { color: #666; }
+  .brand { position: absolute; font-size: 26px; font-weight: bold; letter-spacing: 1px; }
+  .meta { position: absolute; bottom: 8px; font-size: 10px; color: #888; }
+</style>
+</head>
+<body>
+  <p class="titlebar">Artboard 1 — Home <span>· index.html · 1280 × 1024 px</span></p>
+  <p class="bp-note">768px breakpoint guide for mobile.css</p>
+  <div class="guide"><i>768 px</i></div>
+
+  <!-- header -->
+  <div class="frame" style="left:24px; top:48px; width:1232px; height:72px;"></div>
+  <p class="brand" style="left:48px; top:69px;">SPACEMAN</p>
+  <div class="zone" style="left:836px; top:66px; width:396px; height:36px;"></div>
+  <p class="label in" style="left:852px; top:77px;">nav ul · Home · Articles · Gallery · About · Wireframes</p>
+
+  <!-- hero -->
+  <div class="zone" style="left:24px; top:136px; width:1232px; height:168px;"></div>
+  <p class="label" style="left:40px; top:148px;">.hero — min-height 70vh (cropped)</p>
+  <div class="bar" style="left:44px; top:226px; width:420px; height:26px;"></div>
+  <p class="label" style="left:480px; top:233px;">.hero-content h2</p>
+  <div class="bar" style="left:44px; top:264px; width:300px; height:10px;"></div>
+
+  <!-- feature image -->
+  <div class="imgbox" style="left:44px; top:330px; width:1192px; height:296px;">
+    <svg><line x1="0" y1="0" x2="100%" y2="100%" stroke="#b0b0b0"/><line x1="100%" y1="0" x2="0" y2="100%" stroke="#b0b0b0"/></svg>
+  </div>
+  <p class="label" style="left:58px; top:342px;">.feature img — placed scan · span 12</p>
+
+  <!-- feature text -->
+  <div class="bar" style="left:44px; top:642px; width:360px; height:22px;"></div>
+  <div class="stub" style="left:44px; top:678px; width:540px; height:8px;"></div>
+
+  <!-- cards -->
+  <p class="label" style="left:430px; top:700px;">↔ 24px gutter</p>
+  <div class="zone" style="left:44px; top:716px; width:381px; height:160px;"></div>
+  <div class="bar" style="left:64px; top:738px; width:140px; height:14px;"></div>
+  <div class="stub" style="left:64px; top:768px; width:330px; height:44px;"></div>
+
+  <div class="zone" style="left:449px; top:716px; width:381px; height:160px;"></div>
+  <div class="bar" style="left:469px; top:738px; width:140px; height:14px;"></div>
+  <div class="stub" style="left:469px; top:768px; width:330px; height:44px;"></div>
+
+  <div class="zone" style="left:854px; top:716px; width:381px; height:160px;"></div>
+  <div class="bar" style="left:874px; top:738px; width:140px; height:14px;"></div>
+  <div class="stub" style="left:874px; top:768px; width:330px; height:44px;"></div>
+
+  <p class="label" style="left:44px; top:890px;">.card — span 4 · span 6 @1024 · span 12 @768 · 12-col grid · 24px gutters</p>
+
+  <!-- footer -->
+  <div class="frame" style="left:24px; top:932px; width:1232px; height:52px;"></div>
+  <p class="label in" style="left:44px; top:951px;">footer — GRAPH 130 | Spaceman Magazine | project credit</p>
+
+  <p class="meta" style="left:24px;">Spaceman Magazine · GRAPH 130 · Web redesign</p>
+  <p class="meta" style="right:24px;">exported for screens → images/wireframes/</p>
+</body>
+</html>
