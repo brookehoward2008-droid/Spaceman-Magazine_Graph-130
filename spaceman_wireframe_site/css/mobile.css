@@ -2,11 +2,32 @@
   box-sizing: border-box;
 }
 
+:root {
+  --paper: #f3ead3;
+  --ink: #161616;
+  --line: #222;
+  --header: #f6cf55;
+  --main: #9fd18b;
+  --aside: #8cc7e8;
+  --article: #f09887;
+  --section: #c8a4df;
+  --footer: #f2a65a;
+  --note: #fffdf4;
+  --accent: #006b7d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #e8e2d2;
-  color: #1b1b1b;
+  padding: 24px;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: var(--paper);
+  color: var(--ink);
 }
 
 img {
@@ -15,201 +36,290 @@ img {
   height: auto;
 }
 
+/* Baseline grid from the planning notes */
+.baseline-grid {
+  background-image: linear-gradient(to bottom, transparent 23px, rgba(0, 0, 0, 0.13) 24px);
+  background-size: 100% 24px;
+}
+
+/* Shared wireframe styling */
 .wire-block,
-.wire-card {
-  border: 3px dashed #333;
-  background: #fffdf4;
+.note-card {
+  border: 3px dashed var(--line);
   position: relative;
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
 .wire-label {
   display: inline-block;
-  background: #222;
-  color: #fff;
+  margin: 0 0 12px;
+  padding: 7px 11px;
+  background: var(--line);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.08em;
-  padding: 6px 10px;
-  margin-bottom: 12px;
   text-transform: uppercase;
 }
 
-.site-header {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 28px;
-}
-
-.site-header h1 {
-  margin: 0 0 8px;
-  font-size: clamp(2rem, 5vw, 4rem);
-}
-
-.site-header p {
-  margin: 0;
-}
-
-.site-nav {
-  max-width: 1280px;
-  margin: 12px auto;
-  padding: 18px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.site-nav .wire-label {
-  margin-right: auto;
-  margin-bottom: 0;
-}
-
-.site-nav a {
-  color: #111;
-  font-weight: 800;
-  text-decoration: none;
-  border: 2px solid #111;
-  padding: 10px 14px;
-  background: #f6cf55;
-}
-
-main {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 18px 0 36px;
-}
-
-.artboard-note {
-  padding: 20px;
-  margin-bottom: 22px;
-}
-
-.artboard-note p {
-  margin: 6px 0;
-}
-
-.grid-section {
-  margin-bottom: 34px;
-}
-
-.grid-section h2 {
-  border: 3px solid #222;
-  background: #b64332;
-  color: white;
-  padding: 18px;
-  margin: 0 0 18px;
+.class-note,
+.tag-note,
+figcaption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
-/* Required desktop 3-column grid */
-.three-column-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+/* Main instructor-style colored regions */
+.site-header {
+  max-width: 1280px;
+  margin: 0 auto 18px;
+  background: var(--header);
 }
 
-.wire-card {
-  padding: 14px;
+.page-title {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 12px 28px 12px 4vw;
+  background: var(--accent);
+  color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: 0.05em;
 }
 
-.wire-card img {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 2px solid #111;
-  background: #ddd;
-  margin-bottom: 14px;
+.site-nav {
+  max-width: 1280px;
+  margin: 0 auto 24px;
+  background: #fff7d5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
 }
 
-.vector-card img {
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  background: white;
-}
-
-.note-list {
-  border: 2px solid #555;
-  background: #f1ecd9;
-  padding: 12px;
-  margin-bottom: 14px;
-}
-
-.note-list p {
-  margin: 0 0 8px;
-  line-height: 1.4;
-  font-size: 0.92rem;
-}
-
-.note-list p:last-child {
+.site-nav .wire-label {
   margin-bottom: 0;
 }
 
-.wire-card h3 {
-  margin: 0 0 8px;
-  font-size: 1.35rem;
+.site-nav a {
+  border: 2px solid var(--line);
+  background: white;
+  color: var(--ink);
+  padding: 9px 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-decoration: none;
 }
 
-.wire-card > p {
-  margin: 0;
-  line-height: 1.5;
+.wire-main {
+  max-width: 1280px;
+  margin: 0 auto 24px;
+  padding: 24px;
+  background-color: var(--main);
+  border: 4px solid var(--line);
+}
+
+.aside-panel {
+  background: var(--aside);
+}
+
+.article-panel {
+  background: var(--article);
+}
+
+.article-panel p,
+.aside-panel p,
+.section-child,
+.site-footer p {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 12px;
+  margin: 0 0 16px;
+}
+
+.standout,
+.standout-blue {
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+.standout-blue {
+  font-size: 1.6rem;
+}
+
+.article-title {
+  display: inline-block;
+  margin: 10px 0 18px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: white;
+  font-family: "Orbitron", Arial, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.image-wire {
+  border: 2px solid var(--line);
+  background: white;
+  padding: 12px;
+  margin: 0 0 18px;
+}
+
+.image-wire img {
+  border: 2px solid var(--line);
+  max-height: 440px;
+  object-fit: cover;
+}
+
+.image-wire figcaption {
+  margin-top: 10px;
+  color: var(--accent);
+}
+
+.no-border {
+  border: none;
+}
+
+.nested-section {
+  clear: both;
+  background: var(--section);
+  border: 3px dashed var(--line);
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.nested-section .wire-label {
+  display: block;
+  width: fit-content;
+}
+
+.section-child {
+  min-height: 120px;
 }
 
 .site-footer {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 22px;
+  padding: 24px;
+  background: var(--footer);
+  border-top: 6px solid var(--line);
 }
 
-/* 768px tablet artboard */
-@media screen and (max-width: 768px) {
+/* User's required 3-column grid setup */
+.grid-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-col {
+  /* Each column is about 394.67px wide at 1280px with 24px gutters */
+}
+
+.notes-board {
+  margin-bottom: 28px;
+}
+
+.notes-board h2 {
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 3px solid var(--line);
+  background: var(--accent);
+  color: white;
+  font-family: "Orbitron", Arial, sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  letter-spacing: 0.04em;
+}
+
+.note-card {
+  background: var(--note);
+  min-height: 280px;
+}
+
+.note-card p {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  padding-bottom: 8px;
+  margin: 0 0 8px;
+}
+
+.note-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid var(--line);
+  margin-bottom: 12px;
+}
+
+.project-link a {
+  color: var(--accent);
+  font-weight: 900;
+  word-break: break-word;
+}
+
+/* Instructor media query behavior */
+@media screen and (max-width: 800px) {
+  body {
+    padding: 14px;
+  }
+
+  header,
+  main,
+  footer,
   .site-header,
   .site-nav,
-  main,
-  .site-footer {
-    max-width: 768px;
+  .wire-main,
+  .site-footer,
+  .grid-container {
+    width: 95%;
+    max-width: 95%;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
-  body {
-    padding: 0 14px;
+  .pure-g {
+    display: block;
   }
 
-  .three-column-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .site-nav {
-    align-items: flex-start;
-  }
-
-  .site-nav .wire-label {
+  .pure-u-1-3,
+  .pure-u-2-3,
+  .pure-u-1-2 {
+    display: block;
     width: 100%;
   }
-}
 
-/* Mobile artboard */
-@media screen and (max-width: 480px) {
-  body {
-    padding: 0 10px;
+  .grid-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .site-nav {
-    flex-direction: column;
     align-items: stretch;
-  }
-
-  .site-nav .wire-label {
-    width: fit-content;
+    flex-direction: column;
   }
 
   .site-nav a {
     text-align: center;
   }
 
-  .three-column-grid {
-    grid-template-columns: 1fr;
+  .page-title {
+    font-size: 2.4rem;
+    padding-left: 18px;
   }
 
-  .wire-card img {
-    aspect-ratio: 1 / 1;
+  .image-wire img {
+    max-height: none;
   }
 }
