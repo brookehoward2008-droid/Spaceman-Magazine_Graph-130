@@ -1,4 +1,31 @@
 /* ---------------------------------------
+   PAGE-SPECIFIC SPACE BACKGROUNDS
+----------------------------------------*/
+body.final-1 {
+  background-image: url("../images/background3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.final-2 {
+  background-image: url("../images/background2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.final-3 {
+  background-image: url("../images/background_unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ---------------------------------------
    COSMIC OVERLAY
 ----------------------------------------*/
 body.final-1::before,
@@ -10,48 +37,17 @@ body.final-3::before {
   z-index: -1;
   pointer-events: none;
 
-  background: linear-gradient(to bottom right,
-      rgba(255, 0, 124, 0.45),
-      rgba(0, 127, 140, 0.35),
-      rgba(59, 0, 255, 0.45));
-}
 
-/* ---------------------------------------
-   GLOBAL BODY (MUST BE TRANSPARENT)
-----------------------------------------*/
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Georgia", serif;
-  background: transparent;
-  /* REQUIRED */
-  color: #e8e8e8;
-  line-height: 1.65;
 
   /* ---------------------------------------
-   PAGE-SPECIFIC SPACE BACKGROUNDS
+   GLOBAL BODY (MUST BE TRANSPARENT)
 ----------------------------------------*/
-  body.final-1 {
-    background-image: url("../images/background3.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", serif;
+    background: transparent;
+    /* REQUIRED */
+    color: #e8e8e8;
+    line-height: 1.65;
   }
-
-  body.final-2 {
-    background-image: url("../images/background2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
-  body.final-3 {
-    background-image: url("../images/background_unsplash.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-  }
-}
