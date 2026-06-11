@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Spaceman Magazine</title>
+
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+    <link rel="stylesheet" href="../styles/mobile.css" />
+  </head>
+
+  <body>
+    <header class="hero page-header">
+      <nav>
+        <h1>SPACEMAN</h1>
+
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a class="active" href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="wireframes.html">Wireframes</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article class="article-shell">
+        <header class="article-title">
+          <p class="kicker">Gallery</p>
+          <h1>Stills from Spaceman #3</h1>
+          <p class="deck">
+            A four-column grid of scanned stills from the April 1962 issue,
+            with caption overlays — built to Artboard 3 of the wireframes.
+          </p>
+        </header>
+      </article>
+
+      <!--
+        To fill a slot, save a still as images/gallery/still-01.jpg (02, 03, …)
+        and replace the placeholder div with an image, e.g.:
+
+          <figure class="gallery-item">
+            <img src="../images/gallery/still-01.jpg" alt="Describe the still" />
+            <figcaption>Caption for the still.</figcaption>
+          </figure>
+      -->
+      <section class="gallery-grid">
+        <figure class="gallery-item">
+          <div class="slot">STILL 01</div>
+          <figcaption>images/gallery/still-01.jpg</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="slot">STILL 02</div>
+          <figcaption>images/gallery/still-02.jpg</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="slot">STILL 03</div>
+          <figcaption>images/gallery/still-03.jpg</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="slot">STILL 04</div>
+          <figcaption>images/gallery/still-04.jpg</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="slot">STILL 05</div>
+          <figcaption>images/gallery/still-05.jpg</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="slot">STILL 06</div>
+          <figcaption>images/gallery/still-06.jpg</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="slot">STILL 07</div>
+          <figcaption>images/gallery/still-07.jpg</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="slot">STILL 08</div>
+          <figcaption>images/gallery/still-08.jpg</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer>
+      <p>GRAPH 130 | Spaceman Magazine | Project by B. Howard</p>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>

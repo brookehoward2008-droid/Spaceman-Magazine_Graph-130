@@ -124,6 +124,75 @@ img {
     color: #ccc;
 }
 
+/* Gallery — 4-column image grid with caption overlays */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1440px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item .slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #555;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 0.85rem;
+    color: #ddd;
+}
+
+/* Wireframes page — artboard display */
+.wireframe-set {
+    display: grid;
+    gap: 24px;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.wireframe-set figure {
+    background: #111;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.wireframe-set figcaption {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+}
+
+.text-link {
+    color: white;
+}
+
 footer {
     padding: 2rem 3rem;
     color: #888;
