@@ -1,1 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Article | Spaceman Magazine</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">Spaceman Magazine</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="article.html">Article</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="originals.html">Originals</a>
+        <a href="final-wireframes.html">Wireframes</a>
+      </nav>
+    </header>
+
+    <main class="article-page">
+      <article class="article-shell">
+        <header class="article-title">
+          <p class="kicker">Feature article</p>
+          <h1>Into the Cosmic Unknown</h1>
+          <p class="deck">
+            The page structure follows a print-magazine rhythm: a strong visual
+            lead, compact paragraphs, and a clear reading path.
+          </p>
+        </header>
+
+        <figure class="article-rail">
+          <img
+            src="assets/images/wireframes/page-p46-desktop-1280x1024.png"
+            alt="Wide reference image from the P46 article artboard" />
+          <figcaption>
+            Reference image rail adapted from the P46 layout study.
+          </figcaption>
+        </figure>
+
+        <section class="article-columns">
+          <div>
+            <p>
+              Space stories from the early nineteen-sixties often carried a
+              strange mixture of engineering, wonder, and theatrical
+              imagination. The layouts leaned on bold image areas and tight
+              columns that moved the reader forward with very little wasted
+              space.
+            </p>
+            <p>
+              This web version keeps that visual pressure while giving the
+              article room to breathe on modern screens.
+            </p>
+          </div>
+          <div>
+            <p>
+              The page becomes simpler as the screen narrows. Columns stack,
+              captions stay near their images, and navigation remains easy to
+              reach.
+            </p>
+            <p>
+              The design is intentionally plain: strong type, measured spacing,
+              and a grid that does the quiet work.
+            </p>
+          </div>
+          <blockquote>
+            “The printed page becomes a map for the screen.”
+          </blockquote>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Project by B. Howard · EVCC GRAPH130</p>
+    </footer>
+  </body>
+</html>
 
