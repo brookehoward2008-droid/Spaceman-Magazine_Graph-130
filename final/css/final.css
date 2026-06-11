@@ -8,8 +8,9 @@
   --muted: #a0a8b0;
   --white: #ffffff;
   --accent: #10d6b5;
-  --panel: #252d38;
-  --panel-light: #3d4756;
+  --panel: rgba(37, 45, 56, 0.92);
+  --panel-light: rgba(61, 71, 86, 0.9);
+  --paper: rgba(226, 218, 197, 0.92);
   --ink: #111820;
   --gap: 24px;
 }
@@ -21,6 +22,12 @@ html {
 body {
   margin: 0;
   background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(50, 59, 73, 0.78), rgba(50, 59, 73, 0.78)),
+    url("../images/space-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text);
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 17px;
@@ -34,6 +41,7 @@ img {
   height: auto;
 }
 
+/* Layout wrappers */
 .site-header,
 .main-nav,
 .magazine-page,
@@ -49,7 +57,7 @@ img {
   flex-direction: column;
   justify-content: center;
   padding: 40px 0 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .site-title {
@@ -65,10 +73,10 @@ img {
 .site-subtitle {
   margin: 12px 0 0;
   max-width: 760px;
-  color: var(--muted);
+  color: var(--text);
 }
 
-/* Navigation uses flexbox */
+/* Navigation uses Flexbox */
 .main-nav {
   display: flex;
   justify-content: flex-end;
@@ -87,7 +95,8 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   padding: 8px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(17, 24, 32, 0.42);
   transition: all 0.3s ease;
 }
 
@@ -98,20 +107,27 @@ img {
   color: var(--bg);
 }
 
-/* Page wrapper */
+/* Main page */
 .magazine-page {
-  padding: 24px 0 40px;
+  padding: 24px;
+  background: rgba(205, 210, 212, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(2px);
 }
 
-/* Main article layout */
+/* Fixed article layout */
 .article-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "hero intro"
+    "hero copyone"
+    "copytwo copythree"
+    "quote quote";
   gap: var(--gap);
   align-items: start;
 }
 
-/* Original scans page grid */
 .source-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -119,14 +135,13 @@ img {
   align-items: start;
 }
 
-/* Big image */
+/* Image placement */
 .hero-image {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
+  grid-area: hero;
   margin: 0;
   background: var(--panel);
   border: 1.5px solid var(--accent);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
   overflow: hidden;
 }
 
@@ -134,28 +149,25 @@ img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center top;
-  filter: grayscale(35%);
-  transition: filter 0.4s ease;
+  filter: grayscale(20%);
+  transition: filter 0.4s ease, transform 0.3s ease;
 }
 
 .hero-image img:hover {
   filter: none;
+  transform: scale(1.015);
 }
 
-/* For tall images */
-.hero-image.tall img {
-  aspect-ratio: 3 / 4;
-  object-position: center top;
-}
-
-/* Use this if a face is being cut off */
+/* Use this class when faces are getting cropped */
+.hero-image.faces-up img,
 .faces-up img {
   object-position: center top;
 }
 
-/* Use this if an image needs to move lower */
-.faces-down img {
-  object-position: center 20%;
+/* Tall image version */
+.hero-image.tall img {
+  aspect-ratio: 3 / 4;
+  object-position: center top;
 }
 
 /* Caption */
@@ -169,16 +181,16 @@ figcaption {
 
 /* Intro column */
 .article-intro {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  background: var(--panel);
-  border-left: 6px solid var(--accent);
+  grid-area: intro;
+  background: var(--paper);
+  border-left: 8px solid var(--accent);
   padding: 20px;
+  color: var(--ink);
 }
 
 .article-intro h1 {
   margin: 0 0 14px;
-  color: var(--white);
+  color: var(--ink);
   font-family: "Fraunces", Georgia, serif;
   font-size: clamp(2.1rem, 5vw, 4.6rem);
   font-weight: 900;
@@ -187,25 +199,38 @@ figcaption {
 }
 
 .deck {
-  color: var(--text);
+  color: var(--ink);
   font-size: 1.1rem;
   font-weight: 700;
 }
 
-/* Text columns */
+/* Article copy blocks */
 .copy-block {
-  background: var(--panel);
+  background: rgba(245, 245, 245, 0.92);
   border-top: 4px solid var(--accent);
   padding: 18px;
   min-height: auto;
+  color: var(--ink);
+}
+
+.copy-block:nth-of-type(2) {
+  grid-area: copyone;
+}
+
+.copy-block:nth-of-type(3) {
+  grid-area: copytwo;
+}
+
+.copy-block:nth-of-type(4) {
+  grid-area: copythree;
 }
 
 .copy-block h2,
 .scan-card h2 {
   margin: 0 0 12px;
-  color: var(--accent);
-  font-size: 0.9rem;
-  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
@@ -213,12 +238,12 @@ figcaption {
 .copy-block p,
 .scan-card p,
 .project-notes p {
-  color: var(--muted);
+  color: var(--ink);
 }
 
-/* Quote */
+/* Pull quote */
 .pull-quote {
-  grid-column: 1 / -1;
+  grid-area: quote;
   background: var(--accent);
   color: var(--bg);
   padding: 26px;
@@ -229,7 +254,7 @@ figcaption {
   letter-spacing: -0.02em;
 }
 
-/* Supporting image strip */
+/* Supporting image grid */
 .image-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -244,7 +269,7 @@ figcaption {
   object-fit: cover;
   object-position: center top;
   background: var(--panel);
-  filter: grayscale(35%);
+  filter: grayscale(20%);
   transition: filter 0.4s ease, transform 0.3s ease;
 }
 
@@ -256,9 +281,10 @@ figcaption {
 
 /* Scans page */
 .scan-card {
-  background: var(--panel);
+  background: rgba(245, 245, 245, 0.92);
   padding: 16px;
   border: 1.5px solid var(--accent);
+  color: var(--ink);
 }
 
 .project-notes {
@@ -273,7 +299,11 @@ figcaption {
   font-family: "Fraunces", Georgia, serif;
 }
 
-/* Footer uses flexbox */
+.project-notes p {
+  color: var(--text);
+}
+
+/* Footer uses Flexbox */
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -281,8 +311,8 @@ figcaption {
   gap: 24px;
   flex-wrap: wrap;
   padding: 24px 0 40px;
-  color: var(--muted);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /* Tablet */
@@ -299,4 +329,68 @@ figcaption {
     justify-content: flex-start;
   }
 
-  .article-grid,
+  .article-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "hero"
+      "copyone"
+      "copytwo"
+      "copythree"
+      "quote";
+  }
+
+  .source-grid,
+  .image-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-image,
+  .article-intro,
+  .copy-block,
+  .pull-quote {
+    grid-column: 1;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 520px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .site-header,
+  .main-nav,
+  .magazine-page,
+  .site-footer {
+    width: 92%;
+  }
+
+  .magazine-page {
+    padding: 16px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .source-grid,
+  .image-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .pull-quote {
+    font-size: 2rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
