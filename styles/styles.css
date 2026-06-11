@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+    line-height: 1.6;
+}
+
+.hero {
+    min-height: 70vh;
+    background: black;
+    padding: 3rem;
+}
+
+/* Shorter header for inner pages (no hero content) */
+.page-header {
+    min-height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a.active {
+    border-bottom: 2px solid white;
+}
+
+.hero-content {
+    margin-top: 10rem;
+}
+
+.card {
+    background: #111;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* Wireframe page header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 1.5rem 3rem;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.site-nav {
+    gap: 2rem;
+}
+
+/* Article pages */
+.article-shell {
+    max-width: 900px;
+    margin: auto;
+    padding: 3rem 2rem;
+}
+
+.kicker {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.deck {
+    color: #bbb;
+    font-size: 1.15rem;
+    margin-top: 1rem;
+}
+
+.article-rail {
+    margin: 2rem 0;
+}
+
+.article-rail figcaption {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.article-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 2rem;
+}
+
+.article-columns blockquote {
+    grid-column: span 2;
+    border-left: 3px solid white;
+    padding-left: 1rem;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: #ccc;
+}
+
+footer {
+    padding: 2rem 3rem;
+    color: #888;
+    text-align: center;
+}
