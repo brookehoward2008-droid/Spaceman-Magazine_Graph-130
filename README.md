@@ -19,9 +19,7 @@ The root `index.html` is a redirect — the published magazine lives in
 │   ├── css/final.css           All layout + theme (one stylesheet)
 │   └── spaceman_wireframe_site/  Illustrator wireframe + planning notes
 ├── images/optimized/           Web-optimized photos + background.jpg
-├── assets/artboards/           Artboard HTML exports
-├── styles/                     Legacy empty stubs (not used by final/)
-└── scripts/main.js             Console stub (not used by final/)
+└── assets/artboards/           Artboard HTML exports
 ```
 
 ## Layout & grid
