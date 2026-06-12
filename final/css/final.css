@@ -12,7 +12,7 @@
   --panel-light: rgba(61, 71, 86, 0.9);
   --paper: rgba(226, 218, 197, 0.92);
   --ink: #111820;
-  --gap: 24px;
+  --gap: 18px;
 }
 
 html {
@@ -31,8 +31,18 @@ body {
   color: var(--text);
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.5;
   letter-spacing: 0.01em;
+}
+
+/* Tighter paragraph rhythm keeps the page closer to a single
+   magazine-page proportion instead of a long scroll */
+p {
+  margin: 0 0 0.7em;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 img {
@@ -127,7 +137,7 @@ img {
 
 /* Main page */
 .magazine-page {
-  padding: 24px;
+  padding: 20px;
   background: rgba(205, 210, 212, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(2px);
@@ -208,15 +218,15 @@ figcaption {
   grid-area: intro;
   background: var(--paper);
   border-left: 8px solid var(--accent);
-  padding: 20px;
+  padding: 18px;
   color: var(--ink);
 }
 
 .article-intro h1 {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   color: var(--ink);
   font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(2.1rem, 5vw, 4.6rem);
+  font-size: clamp(1.9rem, 3.8vw, 3.4rem);
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -224,7 +234,7 @@ figcaption {
 
 .deck {
   color: var(--ink);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -232,7 +242,7 @@ figcaption {
 .copy-block {
   background: rgba(245, 245, 245, 0.92);
   border-top: 4px solid var(--accent);
-  padding: 18px;
+  padding: 14px;
   min-height: auto;
   color: var(--ink);
 }
@@ -257,7 +267,7 @@ figcaption {
 
 .copy-block h2,
 .scan-card h2 {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   color: var(--ink);
   font-size: 0.95rem;
   font-weight: 800;
@@ -276,11 +286,11 @@ figcaption {
   grid-area: quote;
   background: var(--accent);
   color: var(--bg);
-  padding: 26px;
+  padding: 20px;
   font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
@@ -289,13 +299,13 @@ figcaption {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .image-strip img,
 .scan-card img {
   border: 1.5px solid var(--accent);
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   object-position: center top;
   background: var(--panel);
