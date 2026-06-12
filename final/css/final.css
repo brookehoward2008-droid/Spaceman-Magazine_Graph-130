@@ -12,7 +12,15 @@
   --panel-light: rgba(61, 71, 86, 0.9);
   --paper: rgba(226, 218, 197, 0.92);
   --ink: #111820;
-  --gap: 18px;
+
+  /* Layout measurements — single source of truth.
+     Carried over from the Illustrator wireframe spec (1280px container,
+     1/3 + 2/3 editorial split, 768px breakpoint). The wireframe planned a
+     24px gutter/baseline; the final tightens it to 18px so each page holds
+     a magazine-page proportion (~1:1.3). */
+  --page-max-width: 1280px;
+  --gutter: 18px; /* horizontal grid gap */
+  --baseline: 18px; /* vertical rhythm between blocks */
 }
 
 html {
@@ -75,7 +83,7 @@ img {
 .magazine-page,
 .site-footer {
   width: 85%;
-  max-width: 1280px;
+  max-width: var(--page-max-width);
   margin: 0 auto;
 }
 
@@ -152,14 +160,14 @@ img {
     "hero copyone"
     "copytwo copythree"
     "quote quote";
-  gap: var(--gap);
+  gap: var(--gutter);
   align-items: stretch;
 }
 
 .source-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap);
+  gap: var(--gutter);
   align-items: start;
 }
 
@@ -298,8 +306,8 @@ figcaption {
 .image-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap);
-  margin-top: 18px;
+  gap: var(--gutter);
+  margin-top: var(--baseline);
 }
 
 .image-strip img,

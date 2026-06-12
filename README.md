@@ -1,61 +1,75 @@
 # Spaceman Magazine — GRAPH 130
 
-A space-age editorial magazine website built with basic HTML and CSS
+A space-age editorial magazine website built with hand-written HTML and CSS
 for GRAPH 130 at Everett Community College. Project by B. Howard.
+
+The root `index.html` is a redirect — the published magazine lives in
+[`final/`](final/).
 
 ## Folder structure
 
 ```
 .
-├── index.html                  Home page (site entry point)
-├── pages/                      All other HTML pages
-│   ├── articles.html           Feature article: "Into the Cosmic Unknown"
-│   ├── gallery.html            4-column still gallery with caption overlays
-│   ├── about.html              About the project
-│   ├── wireframes.html         The three project artboards
-│   └── wireframe_spaceman3.html  Early article layout study
-├── styles/                     Stylesheets
-│   ├── styles.css              Base theme + components (nav, cards, articles, gallery)
-│   ├── layout.css              12-column CSS grid
-│   ├── responsive.css          Tablet breakpoint (1024px)
-│   └── mobile.css              Mobile breakpoint (768px) — per the artboard notes
-├── scripts/                    JavaScript
-│   └── main.js
-├── images/                     Site images
-│   ├── hero/                   Home page hero image
-│   ├── gallery/                Scanned stills for the gallery page
-│   └── wireframes/             The three artboards, exported for screens
-│       ├── wireframe-home-1280x1024.png
-│       ├── wireframe-article-1280x1024.png
-│       └── wireframe-gallery-1280x1024.png
-└── assets/                     Other assets (fonts, downloads, etc.)
+├── index.html                  Redirects to final/index.html
+├── final/                      The published magazine (the deliverable)
+│   ├── index.html              Lost Planet — feature article
+│   ├── page2.html              Girl in the Moon
+│   ├── page3.html              Obituary Dept.
+│   ├── scans.html              Wireframes & Notes
+│   ├── css/final.css           All layout + theme (one stylesheet)
+│   └── spaceman_wireframe_site/  Illustrator wireframe + planning notes
+├── images/optimized/           Web-optimized photos + background.jpg
+├── assets/artboards/           Artboard HTML exports
+├── styles/                     Legacy empty stubs (not used by final/)
+└── scripts/main.js             Console stub (not used by final/)
 ```
 
-## Wireframes
+## Layout & grid
 
-The three 1280 × 1024 artboards (Home, Article, Gallery) each place the
-header, navigation, and footer, mark the 960px content width, and note the
-768px breakpoint that `styles/mobile.css` handles. They are exported for
-screens into `images/wireframes/` and presented on the Wireframes page.
+Every page shares one stylesheet, `final/css/final.css`, built on **native
+CSS Grid** (no framework) with Flexbox for the header, nav, and footer. The
+key measurements are defined once as custom properties in `:root` and reused
+everywhere, so the layout has a single source of truth:
 
-## Navigation
+| Variable | Value | Role |
+|---|---|---|
+| `--page-max-width` | `1280px` | Max width of the header, nav, page, and footer (each `width: 85%` up to this cap) |
+| `--gutter` | `18px` | Horizontal gap for every grid (article + image strips) |
+| `--baseline` | `18px` | Vertical rhythm between major blocks |
 
-Every page shares the same navigation:
-**Home · Articles · Gallery · About · Wireframes**.
-The current page's link is underlined via the `active` class in the HTML.
+The feature article is a 2-D grid (`.article-grid`) so the hero image can
+span two text rows:
 
-## Adding the gallery stills
+```
+grid-template-columns: 2fr 1fr;      /* hero 2/3 · text 1/3 */
+grid-template-areas:
+  "hero     intro"
+  "hero     copyone"
+  "copytwo  copythree"
+  "quote    quote";
+```
 
-Save each scanned still as `images/gallery/still-01.jpg` (then 02, 03, …)
-and replace the matching placeholder in `pages/gallery.html` with an
-image — there is a commented example at the top of the gallery grid.
-Files can be added by drag-and-drop on github.com (Add file → Upload files)
-or from a local clone.
+Supporting photos use a three-column track (`repeat(3, 1fr)`). These values
+carry over from the Illustrator wireframe spec (1280px container, a 1/3 + 2/3
+editorial split, a 768px breakpoint). The wireframe planned a 24px
+gutter/baseline; the final tightens it to 18px so each page holds a
+**magazine-page proportion** — the frames render roughly 1 : 1.28–1.38
+(width : height), close to a US-Letter page (1 : 1.29).
 
-## Replacing the hero placeholder
+### Responsive breakpoints
 
-`images/hero/space-hero.svg` is a stand-in. Swap it for a real photo and
-update the `src` in `index.html` if the filename changes.
+- **≤ 768px (tablet):** the article grid collapses to a single column
+  (`intro → hero → copy → quote`); image grids drop to two columns; wrappers
+  widen to 90%.
+- **≤ 520px (mobile):** wrappers 92%, reduced page padding, the nav stacks
+  vertically, image grids become a single column, and the fixed background
+  switches to scroll.
+
+## Wireframe
+
+`final/spaceman_wireframe_site/artboard_wireframe.html` is the Illustrator
+planning artboard: color-coded regions, visible tag/measurement notes, and
+the documented grid that the final layout implements.
 
 ## Viewing the site
 
