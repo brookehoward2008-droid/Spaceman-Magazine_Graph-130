@@ -221,6 +221,7 @@ img {
 /* Image placement */
 .hero-image {
   grid-area: hero;
+  align-self: start;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -232,11 +233,12 @@ img {
   overflow: hidden;
 }
 
-/* The image grows to fill the full grid area so the hero column
-   always matches the height of the text column beside it */
+/* The hero image keeps a fixed aspect ratio and scales with its column
+   width, so it crops the same way at every screen size instead of
+   stretching to whatever height the text column happens to be */
 .hero-image img {
-  flex: 1 1 auto;
-  min-height: 0;
+  width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center top;
