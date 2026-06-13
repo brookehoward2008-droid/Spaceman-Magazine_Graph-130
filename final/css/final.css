@@ -22,6 +22,23 @@
   --page-max-width: 1280px;
   --gutter: 18px; /* horizontal grid gap */
   --baseline: 18px; /* vertical rhythm between blocks */
+
+  /* Masthead display font (overridden per page for a distinct pairing) */
+  --display-font: "Bungee", "Fraunces", Georgia, sans-serif;
+}
+
+/* Per-page palettes — each page pairs its own accent color + display font
+   with the constant hot-pink pop, so pages 1/2/3 feel distinct but related */
+body.theme-moon {
+  --accent: #5cc8ff; /* moonlit cyan-blue */
+  --paper: rgba(228, 230, 242, 0.94); /* cool moonlight ivory */
+  --display-font: "Shrikhand", "Fraunces", Georgia, serif;
+}
+
+body.theme-obituary {
+  --accent: #d99a3c; /* aged amber/gold */
+  --paper: rgba(234, 224, 201, 0.95); /* sepia paper */
+  --display-font: "Rye", "Fraunces", Georgia, serif;
 }
 
 html {
@@ -99,7 +116,7 @@ img {
 
 .site-title {
   margin: 0 0 16px;
-  font-family: "Bungee", "Fraunces", Georgia, sans-serif;
+  font-family: var(--display-font);
   font-size: clamp(2.2rem, 6vw, 4.2rem);
   font-weight: 400;
   line-height: 1.05;
@@ -379,6 +396,11 @@ figcaption {
   box-shadow: 0 0 22px 1px rgba(255, 45, 149, 0.28);
   filter: grayscale(20%);
   transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+/* Show the whole still in the strip instead of cropping it to fill */
+.image-strip img {
+  object-fit: contain;
 }
 
 .image-strip img:hover,
