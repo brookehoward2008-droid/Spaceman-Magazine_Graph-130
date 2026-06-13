@@ -8,6 +8,7 @@
   --muted: #a0a8b0;
   --white: #787777;
   --accent: #10d6b5;
+  --hot-pink: #ff2d95;
   --panel: rgba(37, 45, 56, 0.92);
   --panel-light: rgba(61, 71, 86, 0.9);
   --paper: rgba(226, 218, 197, 0.92);
@@ -123,6 +124,9 @@ img {
 }
 
 .main-nav a {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   flex: 0 1 auto;
   color: var(--text);
   text-decoration: none;
@@ -133,14 +137,57 @@ img {
   padding: 8px 16px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   background: rgba(17, 24, 32, 0.42);
-  transition: all 0.3s ease;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
+/* Hot-pink "photo negative" panel that swipes across on hover */
+.main-nav a::before {
+  content: "";
+  position: absolute;
+  inset: 0 -25%;
+  z-index: -1;
+  background: var(--hot-pink);
+  transform: translateX(-130%) skewX(-12deg);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Hover / keyboard focus: flip to the hot-pink negative */
 .main-nav a:hover,
+.main-nav a:focus-visible {
+  color: #0c0e13;
+  border-color: var(--hot-pink);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 0 16px rgba(255, 45, 149, 0.75),
+    0 8px 22px rgba(255, 45, 149, 0.45);
+}
+
+.main-nav a:hover::before,
+.main-nav a:focus-visible::before {
+  transform: translateX(0) skewX(-12deg);
+}
+
+/* Current page stays teal so it still reads as "you are here" */
 .main-nav a.active {
   background-color: var(--accent);
   border-color: var(--accent);
   color: var(--bg);
+}
+
+/* Respect reduced-motion: keep the color flip, drop the movement */
+@media (prefers-reduced-motion: reduce) {
+  .main-nav a:hover,
+  .main-nav a:focus-visible {
+    transform: none;
+  }
+
+  .main-nav a::before {
+    transition: none;
+  }
 }
 
 /* Main page */
