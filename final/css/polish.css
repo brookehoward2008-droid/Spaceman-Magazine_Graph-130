@@ -9,14 +9,15 @@
 }
 
 .magazine-page {
-  padding: clamp(24px, 2.8vw, 54px) !important;
+  padding: clamp(24px, 2.8vw, 56px) !important;
 }
 
 .article-grid {
-  display: grid !important;
-  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
   gap: clamp(24px, 2.4vw, 44px) !important;
-  align-items: start !important;
+  align-items: stretch !important;
+  grid-template-columns: none !important;
   grid-template-areas: none !important;
 }
 
@@ -27,16 +28,18 @@
 .copy-block,
 .pull-quote {
   grid-area: auto !important;
+  grid-column: auto !important;
   grid-row: auto !important;
+  min-width: 0 !important;
 }
 
 .hero-image,
 .hero-image.tall,
 .hero-image.faces-up {
   order: 1 !important;
-  grid-column: 1 / -1 !important;
-  align-self: start !important;
+  flex: 1 1 100% !important;
   max-width: 100% !important;
+  align-self: stretch !important;
 }
 
 .hero-image img,
@@ -53,8 +56,9 @@
 
 .article-intro {
   order: 2 !important;
-  grid-column: 1 / -1 !important;
+  flex: 1 1 100% !important;
   max-width: none !important;
+  align-self: stretch !important;
   padding: clamp(30px, 3.4vw, 64px) !important;
   font-size: clamp(1.1rem, 1.12vw, 1.3rem) !important;
   line-height: 1.76 !important;
@@ -74,7 +78,7 @@
 
 .copy-block {
   order: 3 !important;
-  grid-column: span 4 !important;
+  flex: 1 1 calc(33.333% - 32px) !important;
   padding: clamp(24px, 2.5vw, 42px) !important;
   font-size: clamp(1.04rem, 1.08vw, 1.2rem) !important;
   line-height: 1.78 !important;
@@ -82,7 +86,7 @@
 
 .pull-quote {
   order: 4 !important;
-  grid-column: 1 / -1 !important;
+  flex: 1 1 100% !important;
   border-left: 10px solid var(--hot-pink) !important;
   background: var(--accent) !important;
   padding: clamp(32px, 3.2vw, 64px) !important;
@@ -91,13 +95,15 @@
 
 .image-strip {
   display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(3, minmax(280px, 1fr)) !important;
   gap: clamp(18px, 1.7vw, 30px) !important;
+  margin-top: clamp(26px, 2.5vw, 48px) !important;
 }
 
 .image-strip img {
   width: 100% !important;
-  height: auto !important;
+  min-height: clamp(280px, 24vw, 480px) !important;
+  height: 100% !important;
   aspect-ratio: 4 / 3 !important;
   object-fit: contain !important;
   object-position: center !important;
@@ -119,22 +125,29 @@
 
 @media screen and (min-width: 1100px) {
   body:not(.theme-moon) .hero-image {
-    grid-column: 1 / span 8 !important;
+    flex-basis: calc(62% - 24px) !important;
   }
 
   body:not(.theme-moon) .article-intro {
-    grid-column: 9 / span 4 !important;
+    flex-basis: calc(38% - 24px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
   }
 
   body.theme-moon .hero-image,
   body.theme-moon .article-intro {
-    grid-column: 1 / -1 !important;
+    flex-basis: 100% !important;
+  }
+
+  body.theme-moon .copy-block {
+    flex-basis: calc(50% - 24px) !important;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .copy-block {
-    grid-column: span 6 !important;
+    flex-basis: calc(50% - 24px) !important;
   }
 }
 
@@ -147,14 +160,16 @@
   }
 
   .article-grid {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .hero-image,
   .article-intro,
   .copy-block,
   .pull-quote {
-    grid-column: 1 / -1 !important;
+    flex-basis: auto !important;
+    width: 100% !important;
   }
 
   .image-strip {
