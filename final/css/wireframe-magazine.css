@@ -1,6 +1,3 @@
-/* Brooke Howard wireframe magazine pass
-   Keeps the existing writing and images, but rebuilds the page around the original editorial wireframe logic. */
-
 :root {
   --wire-gap: 18px;
   --wire-line: rgba(255, 255, 255, 0.2);
