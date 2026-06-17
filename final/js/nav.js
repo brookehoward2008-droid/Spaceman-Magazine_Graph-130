@@ -27,8 +27,8 @@ if (expandableImages.length) {
       display: none;
       align-items: center;
       justify-content: center;
-      padding: clamp(18px, 4vw, 56px);
-      background: rgba(0, 0, 0, 0.88);
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.92);
       backdrop-filter: blur(6px);
     }
 
@@ -37,12 +37,13 @@ if (expandableImages.length) {
     }
 
     .image-viewer img {
-      width: auto;
-      height: auto;
-      max-width: min(94vw, 1500px);
-      max-height: 88vh;
+      display: block;
+      width: 96vw;
+      height: 90vh;
+      max-width: 1800px;
+      max-height: 92vh;
       object-fit: contain;
-      border: 2px solid rgba(255, 255, 255, 0.82);
+      border: 2px solid rgba(255, 255, 255, 0.88);
       box-shadow: 0 0 44px rgba(0, 0, 0, 0.85);
       background: #111820;
     }
@@ -51,8 +52,9 @@ if (expandableImages.length) {
       position: absolute;
       top: 18px;
       right: 18px;
+      z-index: 10000;
       border: 1px solid rgba(255, 255, 255, 0.7);
-      background: rgba(17, 24, 32, 0.9);
+      background: rgba(17, 24, 32, 0.94);
       color: #f4f0e8;
       padding: 10px 14px;
       font: inherit;
