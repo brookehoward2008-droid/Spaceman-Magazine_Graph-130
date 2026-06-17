@@ -214,6 +214,40 @@ body.wireframes-page .scan-card img {
   background: #f3f3f0 !important;
 }
 
+body.wireframes-page .reference-board-card {
+  grid-column: span 2 !important;
+}
+
+body.wireframes-page .reference-board {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  padding: 14px !important;
+  background: #050505 !important;
+  border: 1.5px solid var(--accent) !important;
+  box-shadow: 0 0 22px 1px rgba(255, 45, 149, 0.28) !important;
+}
+
+body.wireframes-page .reference-board img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 4 / 3 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  background: #111820 !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: none !important;
+  filter: grayscale(20%) !important;
+}
+
+body.wireframes-page .reference-board img:hover,
+body.wireframes-page .reference-board img:focus-visible {
+  filter: none !important;
+  transform: scale(1.03) !important;
+}
+
 body.wireframes-page .scan-card figcaption {
   display: flex !important;
   flex-direction: column !important;
@@ -299,6 +333,10 @@ body.wireframes-page .project-notes h2 {
   .image-strip,
   body.wireframes-page .source-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  body.wireframes-page .reference-board-card {
+    grid-column: span 1 !important;
   }
 
   .image-strip img {
