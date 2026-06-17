@@ -1,3 +1,5 @@
+import('./wireframe-loader.js');
+
 const navToggle = document.querySelector('.nav-toggle');
 const siteNavigation = document.querySelector('#site-navigation');
 
