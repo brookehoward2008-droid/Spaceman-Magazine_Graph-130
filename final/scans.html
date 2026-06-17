@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Wireframes and image-placement maps with notes for Brooke Howard's Spacemen magazine final project (GRAPH 130)." />
-    <title>Spacemen Final | Magazine Wireframe with Notes</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%23323b49'/%3E%3Ccircle%20cx='16'%20cy='16'%20r='8'%20fill='%2310d6b5'/%3E%3Ccircle%20cx='13'%20cy='13'%20r='2.5'%20fill='%23323b49'/%3E%3C/svg%3E" />
+    <meta name="description" content="Original magazine article page images, wireframes, and image-placement maps with notes for Brooke Howard's Spacemen magazine final project (GRAPH 130)." />
+    <title>Spacemen Final | Original Magazine Pages and Wireframes</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32' height='32' rx='6' fill='%23323b49'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%2310d6b5'/%3E%3Ccircle cx='13' cy='13' r='2.5' fill='%23323b49'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
@@ -16,20 +16,62 @@
   <body class="wireframes-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <h1 class="site-title">Wireframes</h1>
-      <p class="site-subtitle">Wireframes and image placement maps with notes for the Spacemen final project.</p>
+      <h1 class="site-title">Original Magazine Pages</h1>
+      <p class="site-subtitle">Original article page images, wireframes, and placement notes for the Spacemen final project.</p>
+      <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
+        <span class="nav-toggle-label">Menu</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </header>
 
-    <nav class="main-nav">
+    <nav class="main-nav" id="site-navigation">
       <a href="https://brookehoward2008-droid.github.io/clean26/">Portfolio Homepage</a>
       <a href="index.html">Lost Planet</a>
       <a href="page2.html">Girl in the Moon</a>
       <a href="page3.html">Orbituary Dept.</a>
-      <a class="active" aria-current="page" href="scans.html">Wireframes &amp; Notes</a>
+      <a class="active" aria-current="page" href="scans.html">Original Pages &amp; Notes</a>
     </nav>
 
     <main class="magazine-page" id="main">
-      <section class="source-grid">
+      <section class="project-notes">
+        <h2>Original Article Page Images</h2>
+        <p>This page documents the original magazine article pages used as the visual source for the responsive web design. The images below are saved for web viewing and paired with wireframes so the layout translation can be compared against the original printed structure.</p>
+      </section>
+
+      <section class="source-grid" aria-label="Original magazine article pages and layout reference images">
+        <figure class="scan-card">
+          <img src="spaceman_wireframe_site/images/reference-page-1.svg" alt="Original magazine page reference for the opening Lost Planet article screen" width="1280" height="1024" loading="lazy" decoding="async" />
+          <figcaption>
+            <h2>Original Page Reference 1</h2>
+            <p>Opening article page reference for the Lost Planet screen, showing the source image placement and major text areas used for the responsive layout.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="scan-card">
+          <img src="spaceman_wireframe_site/images/reference-page-2.svg" alt="Original magazine page reference for the Girl in the Moon continuation screen" width="1280" height="1024" loading="lazy" decoding="async" />
+          <figcaption>
+            <h2>Original Page Reference 2</h2>
+            <p>Second article page reference for the Girl in the Moon layout, showing the tall image area and continuation structure.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="scan-card">
+          <img src="spaceman_wireframe_site/images/reference-page-3.svg" alt="Original magazine page reference for the Orbituary Department image-grid screen" width="1280" height="1024" loading="lazy" decoding="async" />
+          <figcaption>
+            <h2>Original Page Reference 3</h2>
+            <p>Third article page reference for the Orbituary Department layout, showing the image-grid structure and supporting copy areas.</p>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="project-notes">
+        <h2>Wireframes and Layout Notes</h2>
+        <p>The wireframes below show how the original article pages were interpreted into a responsive web layout using semantic HTML, CSS Grid, flexible image areas, and media queries.</p>
+      </section>
+
+      <section class="source-grid" aria-label="Wireframes and image placement maps">
         <figure class="scan-card">
           <img src="../images/wireframes/wireframe-home-1280x1024.png" alt="Home page wireframe at 1280 by 1024" width="1280" height="1024" decoding="async" />
           <figcaption>
@@ -53,36 +95,12 @@
             <p>Plan for the photo-heavy Orbituary Dept. page: image strip rows with short captions and supporting copy.</p>
           </figcaption>
         </figure>
-
-        <figure class="scan-card">
-          <img src="spaceman_wireframe_site/images/reference-page-1.svg" alt="Image placement map for the opening article screen" width="1280" height="1024" loading="lazy" decoding="async" />
-          <figcaption>
-            <h2>Placement Map 1</h2>
-            <p>Opening article screen placement map using Lost Planet source pages 34 to 36.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="scan-card">
-          <img src="spaceman_wireframe_site/images/reference-page-2.svg" alt="Image placement map for the article continuation screen" width="1280" height="1024" loading="lazy" decoding="async" />
-          <figcaption>
-            <h2>Placement Map 2</h2>
-            <p>Dense article continuation map using the Girl in the Moon source page 46 cleanplate.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="scan-card">
-          <img src="spaceman_wireframe_site/images/reference-page-3.svg" alt="Image placement map for the continuation and image grid screen" width="1280" height="1024" loading="lazy" decoding="async" />
-          <figcaption>
-            <h2>Placement Map 3</h2>
-            <p>Continuation and image grid placement map using source pages 41 to 43.</p>
-          </figcaption>
-        </figure>
       </section>
 
       <section class="project-notes">
         <h2>Project Information</h2>
-        <p>This final project uses original Spacemen magazine scans, semantic HTML, responsive CSS, and a wide editorial layout built to feel closer to a desktop magazine spread than a narrow web page.</p>
-        <p>The working page frame is set to 97vw with a 2200px maximum width. The Wireframes &amp; Notes page uses a 96vw frame with a 1900px maximum width, three equal desktop columns, two columns on tablet, and one column on mobile.</p>
+        <p>This final project uses original Spacemen magazine page references, semantic HTML, responsive CSS, and a wide editorial layout built to feel closer to a desktop magazine spread than a narrow web page.</p>
+        <p>The working page frame is set to 97vw with a 2200px maximum width. The reference page uses a 96vw frame with a 1900px maximum width, three equal desktop columns, two columns on tablet, and one column on mobile.</p>
         <p>The main magazine pages use a flexible spread system: hero image and story panel first, supporting copy blocks below, then a full-width pull quote and image gallery. Desktop image/story spreads balance around 62% image and 38% text, with the Moon page kept full-width so the rocket scan can breathe.</p>
         <p>Project by Brooke Howard for GRAPH 130.</p>
         <p>See also the <a href="spaceman_wireframe_site/artboard_wireframe.html">wireframe</a> with grid measurements and tag notes.</p>
@@ -92,5 +110,6 @@
     <footer class="site-footer">
       <p>GRAPH 130 | Brooke Howard | Spacemen Magazine Final Project</p>
     </footer>
+    <script src="js/nav.js"></script>
   </body>
 </html>
