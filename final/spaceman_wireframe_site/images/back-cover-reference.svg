@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 816 1056" width="816" height="1056" role="img" aria-label="Spacemen back cover reference artwork">
+  <title>Spacemen back cover reference artwork</title>
+  <rect width="816" height="1056" fill="#b9aa64"/>
+  <text x="18" y="165" font-family="Impact, Haettenschweiler, Arial Black, sans-serif" font-size="166" font-weight="900" fill="#087432" letter-spacing="-7">SPACEMEN</text>
+  <text x="704" y="43" font-family="Arial Black, sans-serif" font-size="20" fill="#111">No.3</text>
+  <text x="735" y="118" font-family="Arial Black, sans-serif" font-size="19" fill="#111">25¢</text>
+  <text x="703" y="218" font-family="Arial Black, sans-serif" font-size="22" fill="#111">APRIL, 1952</text>
+  <text x="25" y="280" font-family="Impact, Arial Black, sans-serif" font-size="54" fill="#74736a" letter-spacing="1">ARE PEOPLE</text>
+  <text x="18" y="414" font-family="Impact, Arial Black, sans-serif" font-size="122" fill="#050505" letter-spacing="-2">ALIVE</text>
+  <text x="48" y="462" font-family="Impact, Arial Black, sans-serif" font-size="48" fill="#77766c" letter-spacing="2">ON THE</text>
+  <text x="10" y="597" font-family="Impact, Arial Black, sans-serif" font-size="124" fill="#050505" letter-spacing="-2">MOON</text>
+  <text x="105" y="705" font-family="Impact, Arial Black, sans-serif" font-size="92" fill="#ba1515">?</text>
+  <text x="111" y="780" font-family="Impact, Arial Black, sans-serif" font-size="32" fill="#111">SEE</text>
+  <text x="0" y="830" font-family="Impact, Arial Black, sans-serif" font-size="31" fill="#b31919">“GIRL IN THE MOON”</text>
+  <text x="78" y="872" font-family="Impact, Arial Black, sans-serif" font-size="28" fill="#111">-STARTS THIS ISSUE</text>
+  <text x="104" y="908" font-family="Impact, Arial Black, sans-serif" font-size="28" fill="#111">ON PAGE 46</text>
+  <g transform="translate(255 205)">
+    <ellipse cx="300" cy="390" rx="235" ry="295" fill="#0b6f36"/>
+    <ellipse cx="250" cy="365" rx="170" ry="235" fill="#93a82a" opacity="0.85"/>
+    <path d="M120 285 C160 170 295 115 430 160 C515 190 580 275 590 390 C602 535 520 675 390 745 C275 805 155 760 105 640 C60 530 65 405 120 285Z" fill="#1c803f" opacity="0.9"/>
+    <path d="M155 250 C215 205 355 190 460 220 C420 270 355 292 245 292 C205 292 175 278 155 250Z" fill="#d0b63a" opacity="0.9"/>
+    <path d="M145 295 C260 345 375 342 500 282" stroke="#111" stroke-width="10" opacity="0.65" fill="none"/>
+    <path d="M130 345 C245 402 395 395 525 328" stroke="#111" stroke-width="10" opacity="0.65" fill="none"/>
+    <path d="M120 400 C260 465 405 452 540 382" stroke="#111" stroke-width="10" opacity="0.65" fill="none"/>
+    <path d="M135 462 C265 515 405 500 528 438" stroke="#111" stroke-width="9" opacity="0.62" fill="none"/>
+    <ellipse cx="245" cy="480" rx="54" ry="32" fill="#06130e"/>
+    <ellipse cx="390" cy="472" rx="61" ry="34" fill="#06130e"/>
+    <path d="M315 430 C290 520 270 580 305 640 C355 610 370 535 350 438Z" fill="#9f8f32" opacity="0.8"/>
+    <path d="M210 610 C275 655 370 660 450 600 C420 710 280 735 210 610Z" fill="#0c2518" opacity="0.8"/>
+    <path d="M120 640 C230 820 440 800 548 604 C538 820 410 930 260 895 C150 870 90 765 120 640Z" fill="#07552e" opacity="0.92"/>
+    <circle cx="270" cy="345" r="12" fill="#f0e072" opacity="0.9"/>
+    <circle cx="310" cy="365" r="9" fill="#fff0a0" opacity="0.9"/>
+    <circle cx="336" cy="410" r="10" fill="#e04421" opacity="0.8"/>
+    <circle cx="212" cy="538" r="9" fill="#f3e177" opacity="0.9"/>
+  </g>
+</svg>
