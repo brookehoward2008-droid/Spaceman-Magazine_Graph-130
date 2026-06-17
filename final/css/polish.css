@@ -1,0 +1,118 @@
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.hero-image,
+.hero-image.tall,
+.hero-image.faces-up {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  align-self: start;
+  max-width: 100%;
+}
+
+.hero-image img,
+.hero-image.tall img,
+.hero-image.faces-up img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center center;
+  background: rgba(17, 24, 32, 0.86);
+}
+
+.article-intro {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  max-width: none;
+  padding: clamp(24px, 3vw, 42px);
+  font-size: clamp(1.05rem, 1.15vw, 1.22rem);
+  line-height: 1.72;
+}
+
+.article-intro h1 {
+  max-width: 13ch;
+  margin-bottom: 18px;
+}
+
+.deck {
+  max-width: 70ch;
+  font-size: clamp(1.18rem, 1.3vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.copy-block {
+  grid-row: auto;
+  padding: clamp(22px, 2.4vw, 34px);
+  font-size: clamp(1.02rem, 1.08vw, 1.16rem);
+  line-height: 1.74;
+}
+
+.copy-block:nth-of-type(2),
+.copy-block:nth-of-type(3),
+.copy-block:nth-of-type(4) {
+  grid-column: span 6;
+}
+
+.article-grid .copy-block:last-of-type:nth-child(4) {
+  grid-column: span 6;
+}
+
+.pull-quote {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  border-left: 10px solid var(--hot-pink);
+  background: var(--accent);
+  padding: clamp(26px, 3vw, 44px);
+}
+
+.image-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.image-strip img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(17, 24, 32, 0.86);
+}
+
+.main-nav {
+  row-gap: 12px;
+}
+
+.main-nav a {
+  white-space: nowrap;
+}
+
+.nav-toggle {
+  display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image,
+  .article-intro,
+  .copy-block:nth-of-type(2),
+  .copy-block:nth-of-type(3),
+  .copy-block:nth-of-type(4),
+  .pull-quote {
+    grid-column: 1 / -1;
+  }
+
+  .image-strip {
+    grid-template-columns: 1fr;
+  }
+}
