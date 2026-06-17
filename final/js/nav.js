@@ -9,14 +9,15 @@ if (navToggle && siteNavigation) {
   });
 }
 
-const expandableImages = document.querySelectorAll('.hero-image img, .image-strip img, .scan-card img');
+const expandableImages = document.querySelectorAll('.hero-image img, .image-strip img, .scan-card img, .photo-album img');
 
 if (expandableImages.length) {
   const style = document.createElement('style');
   style.textContent = `
     .hero-image img,
     .image-strip img,
-    .scan-card img {
+    .scan-card img,
+    .photo-album img {
       cursor: zoom-in;
     }
 
