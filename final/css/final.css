@@ -8,11 +8,44 @@
   --muted: #a0a8b0;
   --white: #787777;
   --accent: #10d6b5;
+<<<<<<< HEAD
+=======
+  --hot-pink: #ff2d95;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   --panel: rgba(37, 45, 56, 0.92);
   --panel-light: rgba(61, 71, 86, 0.9);
   --paper: rgba(226, 218, 197, 0.92);
   --ink: #111820;
+<<<<<<< HEAD
   --gap: 24px;
+=======
+
+  /* Layout measurements — single source of truth.
+     Carried over from the Illustrator wireframe spec (1280px container,
+     1/3 + 2/3 editorial split, 768px breakpoint). The wireframe planned a
+     24px gutter/baseline; the final tightens it to 18px so each page holds
+     a magazine-page proportion (~1:1.3). */
+  --page-max-width: 1280px;
+  --gutter: 18px; /* horizontal grid gap */
+  --baseline: 18px; /* vertical rhythm between blocks */
+
+  /* Masthead display font (overridden per page for a distinct pairing) */
+  --display-font: "Bungee", "Fraunces", Georgia, sans-serif;
+}
+
+/* Per-page palettes — each page pairs its own accent color + display font
+   with the constant hot-pink pop, so pages 1/2/3 feel distinct but related */
+body.theme-moon {
+  --accent: #5cc8ff; /* moonlit cyan-blue */
+  --paper: rgba(228, 230, 242, 0.94); /* cool moonlight ivory */
+  --display-font: "Shrikhand", "Fraunces", Georgia, serif;
+}
+
+body.theme-obituary {
+  --accent: #d99a3c; /* aged amber/gold */
+  --paper: rgba(234, 224, 201, 0.95); /* sepia paper */
+  --display-font: "Rye", "Fraunces", Georgia, serif;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
 }
 
 html {
@@ -31,10 +64,27 @@ body {
   color: var(--text);
   font-family: "DM Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
+<<<<<<< HEAD
   line-height: 1.7;
   letter-spacing: 0.01em;
 }
 
+=======
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* Tighter paragraph rhythm keeps the page closer to a single
+   magazine-page proportion instead of a long scroll */
+p {
+  margin: 0 0 0.7em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
 img {
   display: block;
   width: 100%;
@@ -65,7 +115,11 @@ img {
 .magazine-page,
 .site-footer {
   width: 85%;
+<<<<<<< HEAD
   max-width: 1280px;
+=======
+  max-width: var(--page-max-width);
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   margin: 0 auto;
 }
 
@@ -74,11 +128,16 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+<<<<<<< HEAD
   padding: 40px 0 24px;
+=======
+  padding: 48px 0 28px;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .site-title {
+<<<<<<< HEAD
   margin: 0;
   color: var(--white);
   font-family: "Fraunces", Georgia, serif;
@@ -92,6 +151,29 @@ img {
   margin: 12px 0 0;
   max-width: 760px;
   color: var(--text);
+=======
+  margin: 0 0 16px;
+  font-family: var(--display-font);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  /* hot-pink masthead with a teal pop-shadow */
+  color: var(--hot-pink);
+  text-shadow:
+    3px 3px 0 var(--accent),
+    5px 5px 0 rgba(0, 0, 0, 0.22);
+}
+
+.site-subtitle {
+  margin: 0;
+  max-width: 760px;
+  color: var(--accent);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
 }
 
 /* Navigation uses Flexbox */
@@ -105,6 +187,12 @@ img {
 }
 
 .main-nav a {
+<<<<<<< HEAD
+=======
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   flex: 0 1 auto;
   color: var(--text);
   text-decoration: none;
@@ -115,19 +203,75 @@ img {
   padding: 8px 16px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   background: rgba(17, 24, 32, 0.42);
+<<<<<<< HEAD
   transition: all 0.3s ease;
 }
 
 .main-nav a:hover,
+=======
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Hot-pink "photo negative" panel that swipes across on hover */
+.main-nav a::before {
+  content: "";
+  position: absolute;
+  inset: 0 -25%;
+  z-index: -1;
+  background: var(--hot-pink);
+  transform: translateX(-130%) skewX(-12deg);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Hover / keyboard focus: flip to the hot-pink negative */
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: #0c0e13;
+  border-color: var(--hot-pink);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 0 16px rgba(255, 45, 149, 0.75),
+    0 8px 22px rgba(255, 45, 149, 0.45);
+}
+
+.main-nav a:hover::before,
+.main-nav a:focus-visible::before {
+  transform: translateX(0) skewX(-12deg);
+}
+
+/* Current page stays teal so it still reads as "you are here" */
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
 .main-nav a.active {
   background-color: var(--accent);
   border-color: var(--accent);
   color: var(--bg);
 }
 
+<<<<<<< HEAD
 /* Main page */
 .magazine-page {
   padding: 24px;
+=======
+/* Respect reduced-motion: keep the color flip, drop the movement */
+@media (prefers-reduced-motion: reduce) {
+  .main-nav a:hover,
+  .main-nav a:focus-visible {
+    transform: none;
+  }
+
+  .main-nav a::before {
+    transition: none;
+  }
+}
+
+/* Main page */
+.magazine-page {
+  padding: 20px;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   background: rgba(205, 210, 212, 0.16);
   border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(2px);
@@ -142,25 +286,38 @@ img {
     "hero copyone"
     "copytwo copythree"
     "quote quote";
+<<<<<<< HEAD
   gap: var(--gap);
+=======
+  gap: var(--gutter);
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   align-items: stretch;
 }
 
 .source-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+<<<<<<< HEAD
   gap: var(--gap);
+=======
+  gap: var(--gutter);
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   align-items: start;
 }
 
 /* Image placement */
 .hero-image {
   grid-area: hero;
+<<<<<<< HEAD
+=======
+  align-self: start;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   margin: 0;
   display: flex;
   flex-direction: column;
   background: var(--panel);
   border: 1.5px solid var(--accent);
+<<<<<<< HEAD
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
   overflow: hidden;
 }
@@ -170,6 +327,20 @@ img {
 .hero-image img {
   flex: 1 1 auto;
   min-height: 0;
+=======
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.45),
+    0 0 26px 2px rgba(255, 45, 149, 0.3);
+  overflow: hidden;
+}
+
+/* The hero image keeps a fixed aspect ratio and scales with its column
+   width, so it crops the same way at every screen size instead of
+   stretching to whatever height the text column happens to be */
+.hero-image img {
+  width: 100%;
+  height: auto;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center top;
@@ -208,15 +379,26 @@ figcaption {
   grid-area: intro;
   background: var(--paper);
   border-left: 8px solid var(--accent);
+<<<<<<< HEAD
   padding: 20px;
+=======
+  padding: 18px;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   color: var(--ink);
 }
 
 .article-intro h1 {
+<<<<<<< HEAD
   margin: 0 0 14px;
   color: var(--ink);
   font-family: "Fraunces", Georgia, serif;
   font-size: clamp(2.1rem, 5vw, 4.6rem);
+=======
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.9rem, 3.8vw, 3.4rem);
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -224,7 +406,11 @@ figcaption {
 
 .deck {
   color: var(--ink);
+<<<<<<< HEAD
   font-size: 1.1rem;
+=======
+  font-size: 1rem;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   font-weight: 700;
 }
 
@@ -232,7 +418,11 @@ figcaption {
 .copy-block {
   background: rgba(245, 245, 245, 0.92);
   border-top: 4px solid var(--accent);
+<<<<<<< HEAD
   padding: 18px;
+=======
+  padding: 14px;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   min-height: auto;
   color: var(--ink);
 }
@@ -257,7 +447,11 @@ figcaption {
 
 .copy-block h2,
 .scan-card h2 {
+<<<<<<< HEAD
   margin: 0 0 12px;
+=======
+  margin: 0 0 8px;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   color: var(--ink);
   font-size: 0.95rem;
   font-weight: 800;
@@ -276,11 +470,19 @@ figcaption {
   grid-area: quote;
   background: var(--accent);
   color: var(--bg);
+<<<<<<< HEAD
   padding: 26px;
   font-family: "Fraunces", Georgia, serif;
   font-size: clamp(1.8rem, 4vw, 3.5rem);
   font-weight: 900;
   line-height: 1;
+=======
+  padding: 20px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.05;
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   letter-spacing: -0.02em;
 }
 
@@ -288,21 +490,42 @@ figcaption {
 .image-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+<<<<<<< HEAD
   gap: var(--gap);
   margin-top: 24px;
+=======
+  gap: var(--gutter);
+  margin-top: var(--baseline);
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
 }
 
 .image-strip img,
 .scan-card img {
   border: 1.5px solid var(--accent);
+<<<<<<< HEAD
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center top;
   background: var(--panel);
+=======
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--panel);
+  box-shadow: 0 0 22px 1px rgba(255, 45, 149, 0.28);
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
   filter: grayscale(20%);
   transition: filter 0.4s ease, transform 0.3s ease;
 }
 
+<<<<<<< HEAD
+=======
+/* Show the whole still in the strip instead of cropping it to fill */
+.image-strip img {
+  object-fit: contain;
+}
+
+>>>>>>> fc7b70100b401701782e0fc252829c27172dc610
 .image-strip img:hover,
 .scan-card img:hover {
   filter: none;
